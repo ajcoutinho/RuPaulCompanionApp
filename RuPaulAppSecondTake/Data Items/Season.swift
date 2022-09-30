@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Section Enum
 enum Section {
     case main
 }
@@ -16,6 +17,7 @@ struct Season: Codable, Hashable {
     var seasonNumber: String
     var image: String?
     
+    //Keys from reading from season
     enum CodingKeys: String, CodingKey {
         case id
         case seasonNumber

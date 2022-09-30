@@ -54,6 +54,7 @@ class SeasonsViewController: UIViewController {
     func fetchSeasons() {
         
         if let url = URL(string: "https://www.nokeynoshade.party/api/seasons") {
+            //Start a new Thread
         let seasonTask = URLSession.shared.dataTask(with: url) {
             data, response, error in
             
@@ -87,7 +88,7 @@ class SeasonsViewController: UIViewController {
         }
     }
     
-    //Collects an imaage from the web.
+    //Collects an image from the web.
     func fetchImage(for path: String, in cell: SeasonCell){
 
         guard let imageUrl = URL(string: path) else {

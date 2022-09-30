@@ -17,6 +17,9 @@
 		E98A9BC428E71FBC0076DB39 /* SeasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BC328E71FBC0076DB39 /* SeasonsViewController.swift */; };
 		E98A9BC828E722080076DB39 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BC728E722080076DB39 /* Season.swift */; };
 		E98A9BCB28E722660076DB39 /* SeasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BCA28E722660076DB39 /* SeasonCell.swift */; };
+		E98A9BCD28E726140076DB39 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BCC28E726140076DB39 /* Episode.swift */; };
+		E98A9BCF28E726D80076DB39 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BCE28E726D80076DB39 /* EpisodeCell.swift */; };
+		E98A9BD128E727370076DB39 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BD028E727370076DB39 /* EpisodesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		E98A9BC328E71FBC0076DB39 /* SeasonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonsViewController.swift; sourceTree = "<group>"; };
 		E98A9BC728E722080076DB39 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		E98A9BCA28E722660076DB39 /* SeasonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonCell.swift; sourceTree = "<group>"; };
+		E98A9BCC28E726140076DB39 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		E98A9BCE28E726D80076DB39 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
+		E98A9BD028E727370076DB39 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,7 @@
 			children = (
 				E984F65728E65CCE0071327E /* ViewController.swift */,
 				E98A9BC328E71FBC0076DB39 /* SeasonsViewController.swift */,
+				E98A9BD028E727370076DB39 /* EpisodesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -91,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				E98A9BC728E722080076DB39 /* Season.swift */,
+				E98A9BCC28E726140076DB39 /* Episode.swift */,
 			);
 			path = "Data Items";
 			sourceTree = "<group>";
@@ -99,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				E98A9BCA28E722660076DB39 /* SeasonCell.swift */,
+				E98A9BCE28E726D80076DB39 /* EpisodeCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -174,13 +183,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E98A9BD128E727370076DB39 /* EpisodesViewController.swift in Sources */,
 				E984F65828E65CCE0071327E /* ViewController.swift in Sources */,
+				E98A9BCD28E726140076DB39 /* Episode.swift in Sources */,
 				E98A9BCB28E722660076DB39 /* SeasonCell.swift in Sources */,
 				E98A9BC428E71FBC0076DB39 /* SeasonsViewController.swift in Sources */,
 				E984F65428E65CCE0071327E /* AppDelegate.swift in Sources */,
 				E984F65E28E65CCE0071327E /* RuPaulAppSecondTake.xcdatamodeld in Sources */,
 				E98A9BC828E722080076DB39 /* Season.swift in Sources */,
 				E984F65628E65CCE0071327E /* SceneDelegate.swift in Sources */,
+				E98A9BCF28E726D80076DB39 /* EpisodeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
