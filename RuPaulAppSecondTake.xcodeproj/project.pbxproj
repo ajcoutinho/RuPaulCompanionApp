@@ -20,6 +20,10 @@
 		E98A9BCD28E726140076DB39 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BCC28E726140076DB39 /* Episode.swift */; };
 		E98A9BCF28E726D80076DB39 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BCE28E726D80076DB39 /* EpisodeCell.swift */; };
 		E98A9BD128E727370076DB39 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BD028E727370076DB39 /* EpisodesViewController.swift */; };
+		E98A9BD428E72B2C0076DB39 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BD228E72B2C0076DB39 /* ShowViewController.swift */; };
+		E98A9BD928E72E850076DB39 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BD828E72E850076DB39 /* Queen.swift */; };
+		E98A9BDB28E72EE80076DB39 /* QueenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BDA28E72EE80076DB39 /* QueenCell.swift */; };
+		E98A9BDD28E72FD20076DB39 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A9BDC28E72FD20076DB39 /* Challenge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		E98A9BCC28E726140076DB39 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		E98A9BCE28E726D80076DB39 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		E98A9BD028E727370076DB39 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
+		E98A9BD228E72B2C0076DB39 /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		E98A9BD828E72E850076DB39 /* Queen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
+		E98A9BDA28E72EE80076DB39 /* QueenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueenCell.swift; sourceTree = "<group>"; };
+		E98A9BDC28E72FD20076DB39 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,7 @@
 				E984F65728E65CCE0071327E /* ViewController.swift */,
 				E98A9BC328E71FBC0076DB39 /* SeasonsViewController.swift */,
 				E98A9BD028E727370076DB39 /* EpisodesViewController.swift */,
+				E98A9BD228E72B2C0076DB39 /* ShowViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -99,6 +108,8 @@
 			children = (
 				E98A9BC728E722080076DB39 /* Season.swift */,
 				E98A9BCC28E726140076DB39 /* Episode.swift */,
+				E98A9BD828E72E850076DB39 /* Queen.swift */,
+				E98A9BDC28E72FD20076DB39 /* Challenge.swift */,
 			);
 			path = "Data Items";
 			sourceTree = "<group>";
@@ -108,6 +119,7 @@
 			children = (
 				E98A9BCA28E722660076DB39 /* SeasonCell.swift */,
 				E98A9BCE28E726D80076DB39 /* EpisodeCell.swift */,
+				E98A9BDA28E72EE80076DB39 /* QueenCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -186,10 +198,14 @@
 				E98A9BD128E727370076DB39 /* EpisodesViewController.swift in Sources */,
 				E984F65828E65CCE0071327E /* ViewController.swift in Sources */,
 				E98A9BCD28E726140076DB39 /* Episode.swift in Sources */,
+				E98A9BD928E72E850076DB39 /* Queen.swift in Sources */,
+				E98A9BDD28E72FD20076DB39 /* Challenge.swift in Sources */,
 				E98A9BCB28E722660076DB39 /* SeasonCell.swift in Sources */,
+				E98A9BD428E72B2C0076DB39 /* ShowViewController.swift in Sources */,
 				E98A9BC428E71FBC0076DB39 /* SeasonsViewController.swift in Sources */,
 				E984F65428E65CCE0071327E /* AppDelegate.swift in Sources */,
 				E984F65E28E65CCE0071327E /* RuPaulAppSecondTake.xcdatamodeld in Sources */,
+				E98A9BDB28E72EE80076DB39 /* QueenCell.swift in Sources */,
 				E98A9BC828E722080076DB39 /* Season.swift in Sources */,
 				E984F65628E65CCE0071327E /* SceneDelegate.swift in Sources */,
 				E98A9BCF28E726D80076DB39 /* EpisodeCell.swift in Sources */,
