@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="1849.2753623188407" y="67.633928571428569"/>
         </scene>
-        <!--Item-->
+        <!--Gallery-->
         <scene sceneID="rZR-Qm-h9g">
             <objects>
                 <viewController id="dLI-be-xcj" sceneMemberID="viewController">
@@ -92,13 +92,13 @@
                             <constraint firstItem="aTQ-6Y-ljq" firstAttribute="trailing" secondItem="NjZ-0F-uHP" secondAttribute="trailing" id="zWi-iC-umI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="pMZ-WX-A0e"/>
+                    <tabBarItem key="tabBarItem" title="Gallery" selectedImage="person.crop.artframe" catalog="system" id="pMZ-WX-A0e"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Za-QX-uC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939" y="788"/>
         </scene>
-        <!--Item-->
+        <!--Toot Or Boot-->
         <scene sceneID="Y0D-AW-zOE">
             <objects>
                 <viewController id="4uw-Mc-fIK" sceneMemberID="viewController">
@@ -121,13 +121,13 @@
                             <constraint firstItem="Z8S-f2-v5z" firstAttribute="centerY" secondItem="0Kc-1R-Q36" secondAttribute="centerY" id="xeJ-aZ-vva"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Lr9-Dh-SWk"/>
+                    <tabBarItem key="tabBarItem" title="Toot Or Boot" selectedImage="camera" catalog="system" id="Lr9-Dh-SWk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGV-Q9-vVj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="29" y="788"/>
         </scene>
-        <!--Item-->
+        <!--Encycl-Ru-Pedia-->
         <scene sceneID="hVJ-7S-oH3">
             <objects>
                 <viewController id="724-QW-7bd" customClass="SeasonsViewController" customModule="RuPaulAppSecondTake" customModuleProvider="target" sceneMemberID="viewController">
@@ -139,7 +139,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="2BK-wC-w0r" customClass="SeasonCell" customModule="RuPaulAppSecondTake" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="seasonCell" rowHeight="90" id="2BK-wC-w0r" customClass="SeasonCell" customModule="RuPaulAppSecondTake" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2BK-wC-w0r" id="JXZ-fM-NEj">
@@ -171,6 +171,7 @@
                                         <connections>
                                             <outlet property="seasonImage" destination="u8q-cd-IYw" id="egb-sM-AjL"/>
                                             <outlet property="seasonTitle" destination="XjG-OX-jFK" id="e8t-NJ-WnA"/>
+                                            <segue destination="d2o-yX-f8b" kind="show" id="cyQ-t3-q5w"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -185,7 +186,7 @@
                             <constraint firstAttribute="bottom" secondItem="Kq0-Qe-RGs" secondAttribute="bottom" id="rvI-Wm-cce"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="iyV-pK-zwv"/>
+                    <tabBarItem key="tabBarItem" title="Encycl-Ru-Pedia" selectedImage="book" catalog="system" id="iyV-pK-zwv"/>
                     <connections>
                         <outlet property="tableView" destination="Kq0-Qe-RGs" id="lJr-f9-53O"/>
                     </connections>
@@ -199,14 +200,14 @@
             <objects>
                 <viewController id="d2o-yX-f8b" customClass="EpisodesViewController" customModule="RuPaulAppSecondTake" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H3U-0N-Ezy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nBr-R2-AfD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="56" id="Aat-nt-7t7" customClass="EpisodeCell" customModule="RuPaulAppSecondTake" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="episodeCell" rowHeight="56" id="Aat-nt-7t7" customClass="EpisodeCell" customModule="RuPaulAppSecondTake" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aat-nt-7t7" id="eqG-oE-zNq">
@@ -242,13 +243,14 @@
                             <constraint firstItem="nBr-R2-AfD" firstAttribute="leading" secondItem="lxq-BC-2uG" secondAttribute="leading" id="ZjG-Lg-hae"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6jb-N3-rYV"/>
                     <connections>
                         <outlet property="tableView" destination="nBr-R2-AfD" id="Reo-iH-wFU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zC-tZ-I9h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1849" y="-619"/>
+            <point key="canvasLocation" x="1847.826086956522" y="-619.41964285714278"/>
         </scene>
         <!--Show View Controller-->
         <scene sceneID="HLj-I6-QWs">
@@ -441,6 +443,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="person.crop.artframe" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

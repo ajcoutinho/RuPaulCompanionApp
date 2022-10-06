@@ -92,6 +92,8 @@ class EpisodesViewController: UIViewController {
         
         guard let episode = dataSource.itemIdentifier(for: index) else { return }
         
+        destinationVC.season = season
+        
         destinationVC.episode = episode.id
     }
     

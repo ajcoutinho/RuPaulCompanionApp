@@ -11,8 +11,10 @@ class ShowViewController: ViewController {
 
     //MARK: - Properties
     var episode = 0
+    var season = 0
     var hiddenSections = Set<Int>()
     var challengeData: [Challenge] = []
+    var seasonQueens: [Queen] = []
     var allQueens: [Queen] = []
     var winners: [Queen] = []
     var lipsync: [Queen] = []
@@ -21,6 +23,7 @@ class ShowViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        fetchQueens()
         fetchShow()
     
         populateTables(data: challengeData)
@@ -58,13 +61,37 @@ class ShowViewController: ViewController {
                     showTask.resume()
                 }
     }
+    
+    func fetchQueens() {
+        let urlString = "http://www.nokeynoshade.party/api/seasons/" + String(season) + "/queens"
+        if let url = URL(string: urlString) {
+            let queenTask = URLSession.shared.dataTask(with: url) {
+                data, response, error in
+                
+                if let dataError = error {
+                    print("Could not fetch queens: \(dataError.localizedDescription)")
+                } else {
+                    do {
+                        guard let someData = data else { return }
+                        let jsonDecoder = JSONDecoder()
+                        let downloadedData = try jsonDecoder.decode([Queen].self, from: someData)
+                        self.seasonQueens = downloadedData
+                    } catch DecodingError.valueNotFound(let type, let context) {
+                        print("Problem - no value found - \(type) for this context: \(context)")
+                    } catch let error {
+                        print("Problem decoding: \(error)")
+                    }
+                }
+            }
+            queenTask.resume()
+        }
+    }
 
     func populateTables(data: [Challenge]) {
         if(!(self.challengeData.isEmpty)){
             let mainChallenge = self.challengeData.filter {
                 $0.type == "main"
             }
-                                                
             self.challengeDesc.text = mainChallenge.description
         }
     }
