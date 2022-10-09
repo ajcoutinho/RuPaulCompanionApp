@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E91B710328EF8570008A73DD /* TootBootCapturViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B710228EF8570008A73DD /* TootBootCapturViewController.swift */; };
 		E984F65428E65CCE0071327E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984F65328E65CCE0071327E /* AppDelegate.swift */; };
 		E984F65628E65CCE0071327E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984F65528E65CCE0071327E /* SceneDelegate.swift */; };
 		E984F65828E65CCE0071327E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984F65728E65CCE0071327E /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E91B710228EF8570008A73DD /* TootBootCapturViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootBootCapturViewController.swift; sourceTree = "<group>"; };
 		E984F65028E65CCE0071327E /* RuPaulAppSecondTake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuPaulAppSecondTake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E984F65328E65CCE0071327E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E984F65528E65CCE0071327E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				E98A9BC328E71FBC0076DB39 /* SeasonsViewController.swift */,
 				E98A9BD028E727370076DB39 /* EpisodesViewController.swift */,
 				E98A9BD228E72B2C0076DB39 /* ShowViewController.swift */,
+				E91B710228EF8570008A73DD /* TootBootCapturViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				E98A9BD928E72E850076DB39 /* Queen.swift in Sources */,
 				E98A9BDD28E72FD20076DB39 /* Challenge.swift in Sources */,
 				E98A9BCB28E722660076DB39 /* SeasonCell.swift in Sources */,
+				E91B710328EF8570008A73DD /* TootBootCapturViewController.swift in Sources */,
 				E98A9BD428E72B2C0076DB39 /* ShowViewController.swift in Sources */,
 				E98A9BC428E71FBC0076DB39 /* SeasonsViewController.swift in Sources */,
 				E984F65428E65CCE0071327E /* AppDelegate.swift in Sources */,

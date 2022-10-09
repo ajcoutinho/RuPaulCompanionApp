@@ -101,7 +101,7 @@
         <!--Toot Or Boot-->
         <scene sceneID="Y0D-AW-zOE">
             <objects>
-                <viewController id="4uw-Mc-fIK" sceneMemberID="viewController">
+                <viewController id="4uw-Mc-fIK" customClass="TootBootCapturViewController" customModule="RuPaulAppSecondTake" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Kc-1R-Q36">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,6 +122,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Toot Or Boot" selectedImage="camera" catalog="system" id="Lr9-Dh-SWk"/>
+                    <connections>
+                        <outlet property="TootBootCaptureImage" destination="Z8S-f2-v5z" id="m1U-uD-fAj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGV-Q9-vVj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
