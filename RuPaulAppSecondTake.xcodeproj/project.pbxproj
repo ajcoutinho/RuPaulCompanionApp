@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		E91B710328EF8570008A73DD /* TootBootCapturViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B710228EF8570008A73DD /* TootBootCapturViewController.swift */; };
+		E91B711F28F4DD17008A73DD /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B711E28F4DD17008A73DD /* GalleryViewController.swift */; };
+		E91B712128F4DD7E008A73DD /* TootBootItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B712028F4DD7E008A73DD /* TootBootItem.swift */; };
+		E91B712328F4DE11008A73DD /* TootBootItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B712228F4DE11008A73DD /* TootBootItems.swift */; };
+		E91B712628F4DF4E008A73DD /* TootBootItemDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B712528F4DF4E008A73DD /* TootBootItemDataSource.swift */; };
+		E91B712828F4DFB4008A73DD /* TootBootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B712728F4DFB4008A73DD /* TootBootCell.swift */; };
 		E984F65428E65CCE0071327E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984F65328E65CCE0071327E /* AppDelegate.swift */; };
 		E984F65628E65CCE0071327E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984F65528E65CCE0071327E /* SceneDelegate.swift */; };
 		E984F65828E65CCE0071327E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984F65728E65CCE0071327E /* ViewController.swift */; };
@@ -29,6 +34,11 @@
 
 /* Begin PBXFileReference section */
 		E91B710228EF8570008A73DD /* TootBootCapturViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootBootCapturViewController.swift; sourceTree = "<group>"; };
+		E91B711E28F4DD17008A73DD /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		E91B712028F4DD7E008A73DD /* TootBootItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootBootItem.swift; sourceTree = "<group>"; };
+		E91B712228F4DE11008A73DD /* TootBootItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootBootItems.swift; sourceTree = "<group>"; };
+		E91B712528F4DF4E008A73DD /* TootBootItemDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootBootItemDataSource.swift; sourceTree = "<group>"; };
+		E91B712728F4DFB4008A73DD /* TootBootCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootBootCell.swift; sourceTree = "<group>"; };
 		E984F65028E65CCE0071327E /* RuPaulAppSecondTake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuPaulAppSecondTake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E984F65328E65CCE0071327E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E984F65528E65CCE0071327E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E91B712428F4DF32008A73DD /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				E91B712528F4DF4E008A73DD /* TootBootItemDataSource.swift */,
+			);
+			path = "Data Source";
+			sourceTree = "<group>";
+		};
 		E984F64728E65CCE0071327E = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +98,7 @@
 		E984F65228E65CCE0071327E /* RuPaulAppSecondTake */ = {
 			isa = PBXGroup;
 			children = (
+				E91B712428F4DF32008A73DD /* Data Source */,
 				E98A9BC928E7224B0076DB39 /* Cells */,
 				E98A9BC628E721DB0076DB39 /* Data Items */,
 				E98A9BC528E721BB0076DB39 /* Controllers */,
@@ -102,6 +121,7 @@
 				E98A9BD028E727370076DB39 /* EpisodesViewController.swift */,
 				E98A9BD228E72B2C0076DB39 /* ShowViewController.swift */,
 				E91B710228EF8570008A73DD /* TootBootCapturViewController.swift */,
+				E91B711E28F4DD17008A73DD /* GalleryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -113,6 +133,8 @@
 				E98A9BCC28E726140076DB39 /* Episode.swift */,
 				E98A9BD828E72E850076DB39 /* Queen.swift */,
 				E98A9BDC28E72FD20076DB39 /* Challenge.swift */,
+				E91B712028F4DD7E008A73DD /* TootBootItem.swift */,
+				E91B712228F4DE11008A73DD /* TootBootItems.swift */,
 			);
 			path = "Data Items";
 			sourceTree = "<group>";
@@ -123,6 +145,7 @@
 				E98A9BCA28E722660076DB39 /* SeasonCell.swift */,
 				E98A9BCE28E726D80076DB39 /* EpisodeCell.swift */,
 				E98A9BDA28E72EE80076DB39 /* QueenCell.swift */,
+				E91B712728F4DFB4008A73DD /* TootBootCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -199,10 +222,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E98A9BD128E727370076DB39 /* EpisodesViewController.swift in Sources */,
+				E91B712628F4DF4E008A73DD /* TootBootItemDataSource.swift in Sources */,
 				E984F65828E65CCE0071327E /* ViewController.swift in Sources */,
+				E91B712328F4DE11008A73DD /* TootBootItems.swift in Sources */,
 				E98A9BCD28E726140076DB39 /* Episode.swift in Sources */,
 				E98A9BD928E72E850076DB39 /* Queen.swift in Sources */,
 				E98A9BDD28E72FD20076DB39 /* Challenge.swift in Sources */,
+				E91B711F28F4DD17008A73DD /* GalleryViewController.swift in Sources */,
 				E98A9BCB28E722660076DB39 /* SeasonCell.swift in Sources */,
 				E91B710328EF8570008A73DD /* TootBootCapturViewController.swift in Sources */,
 				E98A9BD428E72B2C0076DB39 /* ShowViewController.swift in Sources */,
@@ -212,7 +238,9 @@
 				E98A9BDB28E72EE80076DB39 /* QueenCell.swift in Sources */,
 				E98A9BC828E722080076DB39 /* Season.swift in Sources */,
 				E984F65628E65CCE0071327E /* SceneDelegate.swift in Sources */,
+				E91B712128F4DD7E008A73DD /* TootBootItem.swift in Sources */,
 				E98A9BCF28E726D80076DB39 /* EpisodeCell.swift in Sources */,
+				E91B712828F4DFB4008A73DD /* TootBootCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

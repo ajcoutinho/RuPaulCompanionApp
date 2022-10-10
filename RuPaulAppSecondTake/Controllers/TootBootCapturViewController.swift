@@ -31,7 +31,7 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         TootBootCaptureImage.addGestureRecognizer(swipeDown)
         
         let alert = UIAlertController()
-        alert.title = "Do you want to take a photo?"
+        alert.title = "Ready to take a photo?"
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel)) //Add action to go back
         
