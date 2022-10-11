@@ -69,6 +69,15 @@ class GalleryViewController: UIViewController {
         snapshot.reloadItems(items)
         datasource.apply(snapshot, animatingDifferences: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedIndexes = collectionView.indexPathsForSelectedItems, let index = selectedIndexes.first else { return }
+        
+        let selectedItem = datasource.itemIdentifier(for: index)
+        
+        let destinationVC = segue.destination as! DetailsViewController
+        destinationVC.item = selectedItem
+    }
 
 }
 

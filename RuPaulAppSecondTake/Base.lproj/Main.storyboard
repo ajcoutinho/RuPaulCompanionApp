@@ -83,6 +83,7 @@
                                             <outlet property="CaptureImage" destination="S6X-J8-WVu" id="HFt-JE-RzW"/>
                                             <outlet property="NewItemImage" destination="O9k-3l-NCr" id="4bI-64-ZGE"/>
                                             <outlet property="TootBootImage" destination="FU1-ge-mog" id="pCv-Dy-Xwc"/>
+                                            <segue destination="Vzp-Wr-keZ" kind="show" id="rnM-ps-R4A"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -347,12 +348,12 @@
             </objects>
             <point key="canvasLocation" x="2753.6231884057975" y="-619.41964285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="IXx-ub-yCf">
             <objects>
-                <viewController id="Vzp-Wr-keZ" sceneMemberID="viewController">
+                <viewController id="Vzp-Wr-keZ" customClass="DetailsViewController" customModule="RuPaulAppSecondTake" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FbG-eL-ObA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cTk-Ll-siJ">
@@ -379,7 +380,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wef-kp-DAh">
-                                <rect key="frame" x="97" y="567" width="309" height="263"/>
+                                <rect key="frame" x="97" y="567" width="309" height="243"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -406,6 +407,12 @@
                             <constraint firstItem="BdI-4L-kQq" firstAttribute="leading" secondItem="gmE-e7-K8R" secondAttribute="trailing" constant="8" id="wl3-Je-KWk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="d3o-WI-rhK"/>
+                    <connections>
+                        <outlet property="critiques" destination="Wef-kp-DAh" id="DeH-7g-vdF"/>
+                        <outlet property="image" destination="cTk-Ll-siJ" id="e4h-Gn-lQc"/>
+                        <outlet property="subject" destination="BdI-4L-kQq" id="BQf-oG-USe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PX4-G9-oF2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
