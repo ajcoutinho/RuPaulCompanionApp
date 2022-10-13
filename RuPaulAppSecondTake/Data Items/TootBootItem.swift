@@ -10,11 +10,11 @@ import UIKit
 
 class TootBootItem: Codable, Hashable {
     
-    let imageName: String
-    let TootOrBoot: Bool //True = Toot, False = Boot
-    let Queen: String
-    let Critique: String
-    let isNew: Bool
+    var imageName: String
+    var TootOrBoot: Bool //True = Toot, False = Boot
+    var Queen: String?
+    var Critique: String?
+    var isNew: Bool
     
     var documentLibrary: URL? {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -22,6 +22,12 @@ class TootBootItem: Codable, Hashable {
         print(paths[0])
         
         return paths[0]
+    }
+    
+    init(photo: String, TootBoot: Bool) {
+        self.imageName = photo
+        self.TootOrBoot = TootBoot
+        self.isNew = true
     }
     
     static func == (lhs: TootBootItem, rhs: TootBootItem) -> Bool {

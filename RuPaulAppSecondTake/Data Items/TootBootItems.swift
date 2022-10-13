@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TootBootItems: Codable {
+class TootBootItems: Codable, Hashable {
     
     var itemsList = [TootBootItem]()
     
