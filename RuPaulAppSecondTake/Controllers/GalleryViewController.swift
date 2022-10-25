@@ -31,7 +31,7 @@ class GalleryViewController: UIViewController {
             //Set image to Boot Icon
         }
         
-        if(!(item.isNew)) {
+        if !(item.isNew) {
             cell.NewItemImage.isHidden = true
         }
         
@@ -57,14 +57,14 @@ class GalleryViewController: UIViewController {
     //MARK: - Methods
     func createInitialSnapshot(for items: [TootBootItem]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, TootBootItem>()
-        snapshot.appendSection([.main])
+        snapshot.appendSections([.main])
         snapshot.appendItems(items, toSection: .main)
         datasource.apply(snapshot, animatingDifferences: true)
     }
     
     func updateSnapshot(for items: [TootBootItem]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, TootBootItem>()
-        snapshot.appendSection([.main])
+        snapshot.appendSections([.main])
         snapshot.appendItems(items, toSection: .main)
         snapshot.reloadItems(items)
         datasource.apply(snapshot, animatingDifferences: true)

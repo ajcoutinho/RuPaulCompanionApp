@@ -34,6 +34,14 @@ class TootBootItem: Codable, Hashable {
         return lhs.imageName == rhs.imageName && lhs.TootOrBoot == rhs.TootOrBoot && lhs.Queen == rhs.Queen && lhs.Critique == rhs.Critique && lhs.isNew == rhs.isNew
     }
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(imageName)
+        hasher.combine(TootOrBoot)
+        hasher.combine(Queen)
+        hasher.combine(Critique)
+        hasher.combine(isNew)
+    }
+    
     func fetchImage(withIdentifier id: String)-> UIImage?{
         if let imagePath = documentLibrary?.appendingPathComponent(id), let imageFromDisk = UIImage(contentsOfFile: imagePath.path){
             return imageFromDisk

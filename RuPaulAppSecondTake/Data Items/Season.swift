@@ -8,7 +8,7 @@
 import Foundation
 
 //Section Enum
-enum Section {
+enum Section: Hashable {
     case main
 }
 

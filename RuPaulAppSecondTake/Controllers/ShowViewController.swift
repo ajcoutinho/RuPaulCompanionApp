@@ -203,7 +203,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     return cell
 }
 
-func tableView(_ tableView: UITableView, viewForHeaderinsection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let sectionButton = UIButton()
     
     switch section {

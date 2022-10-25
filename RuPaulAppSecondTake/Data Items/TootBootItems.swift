@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TootBootItems: Codable, Hashable {
+class TootBootItems: Codable {
     
     var itemsList = [TootBootItem]()
     
@@ -39,7 +39,7 @@ class TootBootItems: Codable, Hashable {
     
     func saveItems() {
         if let fileLocation =
-            documentLibrary?.appendingPathComponent("items.json"){
+            documentLibrary?.appendingPathComponent("tootBootItems.json"){
             do {
                 let encoder = JSONEncoder()
                 encoder.outputFormatting = .prettyPrinted
@@ -54,7 +54,7 @@ class TootBootItems: Codable, Hashable {
     }
     
     func loadItems(){
-        if let fileLocation = documentLibrary?.appendingPathComponent("items.json"){
+        if let fileLocation = documentLibrary?.appendingPathComponent("tootBootItems.json"){
             do{
                 let jsonData = try Data(contentsOf: fileLocation)
                 

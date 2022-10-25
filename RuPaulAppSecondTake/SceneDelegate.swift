@@ -16,7 +16,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        let tootBootItems = TootBootItems()
+        tootBootItems.loadItems()
+        
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        guard let rootVC = window?.rootViewController as? UITabBarController,
+              let tootBootVC = rootVC.viewControllers?[3] as? TootBootCapturViewController,
+              let galleryNavVC = rootVC.viewControllers?[2] as? UINavigationController,
+              let galleryVC = galleryNavVC.viewControllers[0] as? GalleryViewController
+        else { return }
+        
+        tootBootVC.itemsList = tootBootItems
+        galleryVC.galleryItems = tootBootItems
+              
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

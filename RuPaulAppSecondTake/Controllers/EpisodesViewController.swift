@@ -16,10 +16,10 @@ class EpisodesViewController: UIViewController {
         
         //after data is collected, set it in the TableCell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as! EpisodeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath)
         
         //Check if image exists
-        cell.EpisodeName.text = "Episode " + String(Episode.episodeInSeason) + ": " + Episode.title
+        cell.textLabel!.text = "Episode " + String(Episode.episodeInSeason) + ": " + Episode.title
         
         return cell
     }
