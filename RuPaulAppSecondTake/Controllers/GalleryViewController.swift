@@ -23,12 +23,12 @@ class GalleryViewController: UIViewController {
         UICollectionViewCell in
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TootBootCell", for: indexPath) as! TootBootCell
         
-        cell.CaptureImage.image = UIImage(named: item.imageName)
+        cell.CaptureImage.image = self.galleryItems.fetchImage(withIdentifier: item.imageName)
         
         if(item.TootOrBoot) {
-            //Set image to Toot Icon
+            cell.TootBootImage.image = UIImage(named: "TootButton")
         } else {
-            //Set image to Boot Icon
+            cell.TootBootImage.image = UIImage(named: "BootButton")
         }
         
         if !(item.isNew) {
@@ -43,8 +43,6 @@ class GalleryViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.delegate = self
-        
-        galleryItems.loadItems()
         
         createInitialSnapshot(for: galleryItems.itemsList)
     }

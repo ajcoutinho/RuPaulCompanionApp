@@ -11,13 +11,16 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
 
     var itemsList: TootBootItems!
     let imagePicker = UIImagePickerController()
-    
+    var imageStart: CGPoint!
+
     //MARK: - Outlets
     @IBOutlet weak var TootBootCaptureImage: UIImageView!
     
     //MARK: - Load Method
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        imageStart = CGPoint(x: TootBootCaptureImage.center.x, y: TootBootCaptureImage.center.y)
 
         TootBootCaptureImage.isUserInteractionEnabled = true
         
@@ -49,7 +52,7 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         
         //var isFinished = false
 
-        let alert = UIAlertController(title: "Ready to take a photo?", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Ready to take a photo?", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
             self.present(self.imagePicker, animated: true)
             })) //Add Alert Action
@@ -64,6 +67,12 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
     
     //MARK: - Obj-C Methods
     @objc func viewSwipedLeft() {
+        
+        let targetSpot = CGPoint(x: -1000, y: TootBootCaptureImage.center.y)
+        UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+            self.TootBootCaptureImage.center = targetSpot
+        }, completion: nil)
+        
         //Saves an item to the gallery list, with the TootBoot set to 'true'
         if let image = TootBootCaptureImage.image {
             let imageName = UUID().uuidString
@@ -71,8 +80,11 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
             itemsList.saveImage(image: image, withIdentifier: imageName)
             itemsList.addItem(item: newItem)
         }
-        let alert = UIAlertController(title: "Toot!", message: "Would you like to take another?", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Toot!", message: "Would you like to take another?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+                self.TootBootCaptureImage.center = self.imageStart
+            }, completion: nil)
             self.present(self.imagePicker, animated: true)
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
@@ -82,6 +94,12 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
     }
     
     @objc func viewSwipedRight() {
+        
+        let targetSpot = CGPoint(x: 1000, y: TootBootCaptureImage.center.y)
+        UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+            self.TootBootCaptureImage.center = targetSpot
+        }, completion: nil)
+        
         //Saves an item to the gallery list, with the TootBoot set to 'false'
         if let image = TootBootCaptureImage.image {
             let imageName = UUID().uuidString
@@ -89,8 +107,11 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
             itemsList.saveImage(image: image, withIdentifier: imageName)
             itemsList.addItem(item: newItem)
         }
-        let alert = UIAlertController(title: "Boot!", message: "Would you like to take another?", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Boot!", message: "Would you like to take another?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+                self.TootBootCaptureImage.center = self.imageStart
+            }, completion: nil)
             self.present(self.imagePicker, animated: true)
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
@@ -100,8 +121,17 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
     }
     
     @objc func viewSwipedDown() {
-        let alert = UIAlertController(title: "Image discarded", message: "Would you like to try again?", preferredStyle: .actionSheet)
+        
+        let targetSpot = CGPoint(x: TootBootCaptureImage.center.x, y: 1600)
+        UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+            self.TootBootCaptureImage.center = targetSpot
+        }, completion: nil)
+        
+        let alert = UIAlertController(title: "Image discarded", message: "Would you like to try again?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+                self.TootBootCaptureImage.center = self.imageStart
+            }, completion: nil)
             self.present(self.imagePicker, animated: true)
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
