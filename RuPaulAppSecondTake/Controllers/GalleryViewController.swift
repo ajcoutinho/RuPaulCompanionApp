@@ -74,6 +74,7 @@ class GalleryViewController: UIViewController {
         let selectedItem = datasource.itemIdentifier(for: index)
         
         let destinationVC = segue.destination as! DetailsViewController
+        destinationVC.items = galleryItems
         destinationVC.item = selectedItem
     }
 

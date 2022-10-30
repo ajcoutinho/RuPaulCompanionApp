@@ -52,16 +52,20 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         
         //var isFinished = false
 
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let alert = UIAlertController(title: "Ready to take a photo?", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
             self.present(self.imagePicker, animated: true)
             })) //Add Alert Action
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
-            //Add action to go to gallery
+            self.tabBarController?.selectedIndex = 2
         })) //Add Alert Action
         
         present(alert, animated: true)
-        
     }
     
     
@@ -88,7 +92,7 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
             self.present(self.imagePicker, animated: true)
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
-            //Go to the Gallery Controller
+            self.tabBarController?.selectedIndex = 2
         }))
         present(alert, animated: true)
     }
@@ -115,7 +119,7 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
             self.present(self.imagePicker, animated: true)
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
-            //Go to the Gallery Controller
+            self.tabBarController?.selectedIndex = 2
         }))
         present(alert, animated: true)
     }
@@ -135,7 +139,7 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
             self.present(self.imagePicker, animated: true)
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
-            //Go to the Gallery Controller
+            self.tabBarController?.selectedIndex = 2
         }))
         present(alert, animated: true)
     }
