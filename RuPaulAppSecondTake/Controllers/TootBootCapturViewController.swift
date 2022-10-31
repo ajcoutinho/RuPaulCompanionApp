@@ -44,24 +44,32 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         
         imagePicker.delegate = self
         
-        //var isFinished = false
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let alert = UIAlertController(title: "Toot or Boot!", message: "Would you like to take a photo?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { (_) in
+            //Sets source to camera, and presents the imagePicker
             self.alertHandler(1)
-        })) //Add Alert Action
+        }))
         alert.addAction(UIAlertAction(title: "Use photo in Library", style: .default, handler: { (_) in
+            //Sets source to Library, and presents the imagePicker
             self.alertHandler(2)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
+            //Goes to the Gallery.
             self.alertHandler(3)
-        })) //Add Alert Action
+        }))
         
         present(alert, animated: true)
     }
+    
+    //Alert handler key:
+    //0: Resets the capture without setting the source.
+    //1: Resets the capture, setting the source to "Camrea"
+    //2: Resets the capture, setting the source to "Photo Library"
+    //3: Sends the user to the gallery tab
+    //4: Camera is unavailable. Asks if they want to use Photo Library.
     
     func alertHandler(_ key: Int) {
         switch(key) {
@@ -70,17 +78,17 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
                 self.TootBootCaptureImage.center = self.imageStart
             }, completion: nil)
             self.present(self.imagePicker, animated: true)
-            
         case 1:
             if UIImagePickerController.isSourceTypeAvailable(.camera){
                             UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
                                 self.TootBootCaptureImage.center = self.imageStart
-                            }, completion: nil)
+                        }, completion: nil)
                 self.imagePicker.sourceType = .camera
                 self.present(self.imagePicker, animated: true)
-                        } else {
-                            alertHandler(4)
-                        }
+                    } else {
+                        //Camera is unavailable; asks if they want to use Library.
+                        alertHandler(4)
+                    }
         case 2:
             UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
                             self.TootBootCaptureImage.center = self.imageStart
@@ -92,9 +100,11 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         case 4:
             let errorAlert = UIAlertController(title: "You do not have access to the camera.", message: "Would you like to use photos from your Photo Library instead?", preferredStyle: .alert)
                         errorAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+                            //Sets source to Library, and presents the imagePicker
                             self.alertHandler(2)
                         }))
                         errorAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
+                            // Goes to the gallery
                             self.alertHandler(3)
                         }))
             self.present(errorAlert, animated: true)
@@ -122,18 +132,22 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         
         let alert = UIAlertController(title: "Toot!", message: "Would you like to take another?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+            //Presents the imagePicker
             self.alertHandler(0)
         }))
         if(imagePicker.sourceType == .camera) {
             alert.addAction(UIAlertAction(title: "Use photo in Library", style: .default, handler: { (_) in
+                //Sets the source to Library, and presents the ImagePicker
                 self.alertHandler(2)
             }))
         } else {
             alert.addAction(UIAlertAction(title: "Take photo with Camera", style: .default, handler: { (_) in
+                //Sets the source to camera, and presents the ImagePicker
                 self.alertHandler(1)
             }))
         }
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
+            // Goes to the gallery
             self.alertHandler(3)
         }))
         present(alert, animated: true)
@@ -155,18 +169,22 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         }
         let alert = UIAlertController(title: "Boot!", message: "Would you like to take another?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+            //Presents the imagePicker
             self.alertHandler(0)
         }))
         if(imagePicker.sourceType == .camera) {
             alert.addAction(UIAlertAction(title: "Use photo in Library", style: .default, handler: { (_) in
+                //Sets the source to Library, and presents the ImagePicker
                 self.alertHandler(2)
             }))
         } else {
             alert.addAction(UIAlertAction(title: "Take photo with Camera", style: .default, handler: { (_) in
+                //Sets the source to camera, and presents the ImagePicker
                 self.alertHandler(1)
             }))
         }
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
+            // Goes to the gallery
             self.alertHandler(3)
         }))
         present(alert, animated: true)
@@ -181,18 +199,22 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         
         let alert = UIAlertController(title: "Image discarded", message: "Would you like to try again?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+            //Presents the imagePicker
             self.alertHandler(0)
         }))
         if(imagePicker.sourceType == .camera) {
             alert.addAction(UIAlertAction(title: "Use photo in Library", style: .default, handler: { (_) in
+                //Sets the source to Library, and presents the ImagePicker
                 self.alertHandler(2)
             }))
         } else {
             alert.addAction(UIAlertAction(title: "Take photo with Camera", style: .default, handler: { (_) in
+                //Sets the source to camera, and presents the ImagePicker
                 self.alertHandler(1)
             }))
         }
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
+            // Goes to the gallery
             self.alertHandler(3)
         }))
         present(alert, animated: true)

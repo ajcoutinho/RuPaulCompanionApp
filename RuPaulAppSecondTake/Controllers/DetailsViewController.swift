@@ -45,7 +45,6 @@ class DetailsViewController: UIViewController {
             
             items.saveItems()
         }
-        // Do any additional setup after loading the view.
     }
     
     @objc func imageTapped() {
@@ -59,7 +58,21 @@ class DetailsViewController: UIViewController {
             items.saveItems()
         }
     }
-
+    
+    @IBAction func saveInfo(_ sender: Any) {
+        
+        if let item = item {
+            item.Queen = subject.text
+            item.Critique = critiques.text
+            items.saveItems()
+            
+            let alert = UIAlertController(title: "Info saved!", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
+        
+    }
+    
 }
 
 //MARK: - Extensions

@@ -10,6 +10,7 @@ import UIKit
 
 class TootBootItem: Codable, Hashable {
     
+    
     var imageName: String
     var TootOrBoot: Bool //True = Toot, False = Boot
     var Queen: String?

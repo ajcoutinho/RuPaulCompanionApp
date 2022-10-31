@@ -57,6 +57,7 @@ class GalleryViewController: UIViewController {
         var snapshot = NSDiffableDataSourceSnapshot<Section, TootBootItem>()
         snapshot.appendSections([.main])
         snapshot.appendItems(items, toSection: .main)
+        snapshot.reloadItems(items)
         datasource.apply(snapshot, animatingDifferences: true)
     }
     
