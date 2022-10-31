@@ -44,28 +44,63 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         
         imagePicker.delegate = self
         
-        if UIImagePickerController.isSourceTypeAvailable(.camera){
-            imagePicker.sourceType = .camera
-        } else {
-            imagePicker.sourceType = .photoLibrary
-        }
-        
         //var isFinished = false
-
-        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let alert = UIAlertController(title: "Ready to take a photo?", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
-            self.present(self.imagePicker, animated: true)
-            })) //Add Alert Action
+        let alert = UIAlertController(title: "Toot or Boot!", message: "Would you like to take a photo?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { (_) in
+            self.alertHandler(1)
+        })) //Add Alert Action
+        alert.addAction(UIAlertAction(title: "Use photo in Library", style: .default, handler: { (_) in
+            self.alertHandler(2)
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
-            self.tabBarController?.selectedIndex = 2
+            self.alertHandler(3)
         })) //Add Alert Action
         
         present(alert, animated: true)
+    }
+    
+    func alertHandler(_ key: Int) {
+        switch(key) {
+        case 0:
+            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+                self.TootBootCaptureImage.center = self.imageStart
+            }, completion: nil)
+            self.present(self.imagePicker, animated: true)
+            
+        case 1:
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+                                self.TootBootCaptureImage.center = self.imageStart
+                            }, completion: nil)
+                self.imagePicker.sourceType = .camera
+                self.present(self.imagePicker, animated: true)
+                        } else {
+                            alertHandler(4)
+                        }
+        case 2:
+            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+                            self.TootBootCaptureImage.center = self.imageStart
+                        }, completion: nil)
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true)
+        case 3:
+            tabBarController?.selectedIndex = 2
+        case 4:
+            let errorAlert = UIAlertController(title: "You do not have access to the camera.", message: "Would you like to use photos from your Photo Library instead?", preferredStyle: .alert)
+                        errorAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+                            self.alertHandler(2)
+                        }))
+                        errorAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
+                            self.alertHandler(3)
+                        }))
+            self.present(errorAlert, animated: true)
+        default:
+            break
+        }
     }
     
     
@@ -84,15 +119,22 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
             itemsList.saveImage(image: image, withIdentifier: imageName)
             itemsList.addItem(item: newItem)
         }
+        
         let alert = UIAlertController(title: "Toot!", message: "Would you like to take another?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
-            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
-                self.TootBootCaptureImage.center = self.imageStart
-            }, completion: nil)
-            self.present(self.imagePicker, animated: true)
+            self.alertHandler(0)
         }))
+        if(imagePicker.sourceType == .camera) {
+            alert.addAction(UIAlertAction(title: "Use photo in Library", style: .default, handler: { (_) in
+                self.alertHandler(2)
+            }))
+        } else {
+            alert.addAction(UIAlertAction(title: "Take photo with Camera", style: .default, handler: { (_) in
+                self.alertHandler(1)
+            }))
+        }
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
-            self.tabBarController?.selectedIndex = 2
+            self.alertHandler(3)
         }))
         present(alert, animated: true)
     }
@@ -113,13 +155,19 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         }
         let alert = UIAlertController(title: "Boot!", message: "Would you like to take another?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
-            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
-                self.TootBootCaptureImage.center = self.imageStart
-            }, completion: nil)
-            self.present(self.imagePicker, animated: true)
+            self.alertHandler(0)
         }))
+        if(imagePicker.sourceType == .camera) {
+            alert.addAction(UIAlertAction(title: "Use photo in Library", style: .default, handler: { (_) in
+                self.alertHandler(2)
+            }))
+        } else {
+            alert.addAction(UIAlertAction(title: "Take photo with Camera", style: .default, handler: { (_) in
+                self.alertHandler(1)
+            }))
+        }
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
-            self.tabBarController?.selectedIndex = 2
+            self.alertHandler(3)
         }))
         present(alert, animated: true)
     }
@@ -133,13 +181,19 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         
         let alert = UIAlertController(title: "Image discarded", message: "Would you like to try again?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
-            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
-                self.TootBootCaptureImage.center = self.imageStart
-            }, completion: nil)
-            self.present(self.imagePicker, animated: true)
+            self.alertHandler(0)
         }))
+        if(imagePicker.sourceType == .camera) {
+            alert.addAction(UIAlertAction(title: "Use photo in Library", style: .default, handler: { (_) in
+                self.alertHandler(2)
+            }))
+        } else {
+            alert.addAction(UIAlertAction(title: "Take photo with Camera", style: .default, handler: { (_) in
+                self.alertHandler(1)
+            }))
+        }
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (_) in
-            self.tabBarController?.selectedIndex = 2
+            self.alertHandler(3)
         }))
         present(alert, animated: true)
     }
