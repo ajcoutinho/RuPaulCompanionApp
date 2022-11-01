@@ -13,6 +13,8 @@ class ShowViewController: ViewController {
     var episode = 0
     var season = 0
     var hiddenSections = Set<Int>()
+    var queens = [Queen]()
+    
     var challengeData: [Challenge] = []
     var seasonQueens: [Queen] = []
     var allQueens: [Queen] = []

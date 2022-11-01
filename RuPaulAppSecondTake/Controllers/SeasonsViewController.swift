@@ -8,6 +8,9 @@
 import UIKit
 
 class SeasonsViewController: UIViewController {
+    
+    //MARK: - Properties
+    var queens = [Queen]()
 
     //MARK: - Data source
     private lazy var dataSource = UITableViewDiffableDataSource<Section, Season>(tableView: tableView) {
@@ -120,6 +123,7 @@ class SeasonsViewController: UIViewController {
         guard let season = dataSource.itemIdentifier(for: index) else { return }
         
         destinationVC.season = season.id
+        destinationVC.queens = queens
     }
 
 }

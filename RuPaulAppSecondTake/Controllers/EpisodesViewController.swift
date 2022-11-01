@@ -8,6 +8,9 @@
 import UIKit
 
 class EpisodesViewController: UIViewController {
+    
+    //MARK: - Properties
+    var queens = [Queen]()
 
     //MARK: - Data source
     
@@ -95,6 +98,8 @@ class EpisodesViewController: UIViewController {
         destinationVC.season = season
         
         destinationVC.episode = episode.id
+        
+        destinationVC.queens = queens
     }
     
 }

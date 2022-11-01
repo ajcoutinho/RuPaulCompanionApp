@@ -59,6 +59,8 @@ class DetailsViewController: UIViewController {
         }
     }
     
+    
+    
     @IBAction func saveInfo(_ sender: Any) {
         
         if let item = item {
@@ -70,9 +72,27 @@ class DetailsViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true)
         }
-        
     }
     
+    @IBAction func deleteItem(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Delete Item", message: "Are you sure you want to delete this item?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+            if let item = self.item {
+                self.items.deleteImage(withIdentifier: item.imageName)
+                self.items.removeItem(item: item)
+                
+                let ac = UIAlertController(title: "Item deleted", message: nil, preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(ac, animated: true)
+                
+                self.navigationController?.popViewController(animated: true)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default))
+        
+        present(alert, animated: true)
+    }
 }
 
 //MARK: - Extensions
