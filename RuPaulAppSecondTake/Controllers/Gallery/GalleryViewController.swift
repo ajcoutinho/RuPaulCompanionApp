@@ -33,6 +33,8 @@ class GalleryViewController: UIViewController {
         
         if !(item.isNew) {
             cell.NewItemImage.isHidden = true
+        } else {
+            cell.NewItemImage.isHidden = false
         }
         
         return cell

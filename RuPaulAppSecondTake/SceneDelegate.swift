@@ -16,38 +16,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        var queens = [Queen]()
-        
-        if let url = URL(string: "https://www.nokeynoshade.party/api/queens/all") {
-            //Start a new Thread
-        let queenTask = URLSession.shared.dataTask(with: url) {
-            data, response, error in
-            
-            if let dataError = error {
-                print("Could not fetch seasons: \(dataError.localizedDescription)")
-            } else {
-                
-                do {
-                    guard let someData = data else {
-                        return
-                    }
-                    
-                    //grabs data from API and converts it into Seasons object.
-                    let jsonDecoder = JSONDecoder()
-                    let downloadedResults = try jsonDecoder.decode([Queen].self, from: someData)
-                    queens = downloadedResults
-                    
-                } catch DecodingError.valueNotFound(let type, let context){
-                    print("Problem - no value found - \(type) for this context: \(context)")
-                } catch let error {
-                    print("Problem decoding: \(error)")
-                }
-                
-            }
-        }
-            queenTask.resume()
-        }
-        
         
         let tootBootItems = TootBootItems()
         tootBootItems.loadItems()
@@ -57,12 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let rootVC = window?.rootViewController as? UITabBarController,
               let tootBootVC = rootVC.viewControllers?[3] as? TootBootCapturViewController,
               let galleryNavVC = rootVC.viewControllers?[2] as? UINavigationController,
-              let encyclopediaNavVC = rootVC.viewControllers?[1] as? UINavigationController,
-              let galleryVC = galleryNavVC.viewControllers[0] as? GalleryViewController,
-              let seasonsVC = encyclopediaNavVC.viewControllers[0] as? SeasonsViewController
+              let galleryVC = galleryNavVC.viewControllers[0] as? GalleryViewController
         else { return }
         
-            seasonsVC.queens = queens
         tootBootVC.itemsList = tootBootItems
         galleryVC.galleryItems = tootBootItems
               

@@ -83,10 +83,14 @@ class DetailsViewController: UIViewController {
                 self.items.removeItem(item: item)
                 
                 let ac = UIAlertController(title: "Item deleted", message: nil, preferredStyle: .alert)
-                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                ac.addAction(UIAlertAction(title: "OK", style: .default) {
+                    [weak self] _ in
+                    DispatchQueue.main.async {
+                        self?.navigationController?.popViewController(animated: true)
+                    }
+                })
                 self.present(ac, animated: true)
                 
-                self.navigationController?.popViewController(animated: true)
             }
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default))
