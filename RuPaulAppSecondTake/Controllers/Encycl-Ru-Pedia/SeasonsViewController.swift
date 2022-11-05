@@ -9,8 +9,6 @@ import UIKit
 
 class SeasonsViewController: UIViewController {
     
-    //MARK: - Properties
-    var queens = [Queen]()
 
     //MARK: - Data source
     private lazy var dataSource = UITableViewDiffableDataSource<Section, Season>(tableView: tableView) {
@@ -73,7 +71,10 @@ class SeasonsViewController: UIViewController {
                     //grabs data from API and converts it into Seasons object.
                     let jsonDecoder = JSONDecoder()
                     let downloadedResults = try jsonDecoder.decode([Season].self, from: someData)
-                    let seasonResults = downloadedResults
+                    var seasonResults = downloadedResults
+                    seasonResults.sort {
+                        Int($0.seasonNumber) ?? 0 < Int($1.seasonNumber) ?? 0
+                    }
                     
                     DispatchQueue.main.async {
                         self.createSnapShot(with: seasonResults)
@@ -123,7 +124,6 @@ class SeasonsViewController: UIViewController {
         guard let season = dataSource.itemIdentifier(for: index) else { return }
         
         destinationVC.season = season.id
-        destinationVC.queens = queens
     }
 
 }

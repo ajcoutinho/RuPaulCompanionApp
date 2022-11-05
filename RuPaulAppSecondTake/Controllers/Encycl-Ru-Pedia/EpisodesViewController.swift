@@ -8,9 +8,6 @@
 import UIKit
 
 class EpisodesViewController: UIViewController {
-    
-    //MARK: - Properties
-    var queens = [Queen]()
 
     //MARK: - Data source
     
@@ -71,7 +68,11 @@ class EpisodesViewController: UIViewController {
                         //grabs data from API and converts it into Episodes object.
                         let jsonDecoder = JSONDecoder()
                         let downloadedResults = try jsonDecoder.decode([Episode].self, from: someData)
-                        let episodeResults = downloadedResults
+                        var episodeResults = downloadedResults
+                        episodeResults.sort {
+                            $0.episodeInSeason < $1.episodeInSeason
+                        }
+                        
                         DispatchQueue.main.async {
                             self.createSnapShot(with: episodeResults)
                         }
@@ -98,8 +99,6 @@ class EpisodesViewController: UIViewController {
         destinationVC.season = season
         
         destinationVC.episode = episode.id
-        
-        destinationVC.queens = queens
     }
     
 }

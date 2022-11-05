@@ -13,20 +13,37 @@ class ShowViewController: ViewController {
     var episode = 0
     var season = 0
     var hiddenSections = Set<Int>()
-    var queens = [Queen]()
     
     var challengeData: [Challenge] = []
-    var seasonQueens: [Queen] = []
     var allQueens: [Queen] = []
+    
+    //MARK: - Data Source
+    lazy var dataSource = UITableViewDiffableDataSource<Section, Queen>(tableView: tableView) {
+        tableView, indexPath, Queen in
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "queenCell") as! QueenCell
+        
+        cell.queenLabel.text = Queen.name
+        
+        for queen in self.allQueens {
+            if Queen.id == queen.id {
+                if let path = queen.image {
+                    self.fetchImage(for: path, in: cell)
+                }
+            }
+        }
+        
+        return cell
+    }
 
     //MARK: - Load Method
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        fetchQueens()
+        fetchAllQueens()
         fetchShow()
-    
-        populateTables(data: challengeData)
+        
+        populateScene(data: challengeData)
     }
 
     //MARK: - Outlets
@@ -48,7 +65,7 @@ class ShowViewController: ViewController {
                                 let jsonDecoder = JSONDecoder()
                                 let downloadedData = try jsonDecoder.decode([Challenge].self, from: someData)
                                 self.challengeData = downloadedData
-                                self.populateTables(data: self.challengeData)
+                                self.populateScene(data: self.challengeData)
                             
                             } catch DecodingError.valueNotFound(let type, let context) {
                                 print("Problem - no value found - \(type) for this context: \(context)")
@@ -60,13 +77,31 @@ class ShowViewController: ViewController {
                     showTask.resume()
                 }
     }
+    
+    func createSnapShot(with queens: [Queen]) {
+        
+        var snapShot = NSDiffableDataSourceSnapshot<Section, Queen>()
+        
+        //Saves the data in the table.
+        snapShot.appendSections([.main])
+        snapShot.appendItems(queens, toSection: .main)
+        
+        dataSource.apply(snapShot)
+        
+    }
 
-    func populateTables(data: [Challenge]) {
+    func populateScene(data: [Challenge]) {
         if(!(self.challengeData.isEmpty)){
-            let mainChallenge = self.challengeData.filter {
+            var mainChallenge = self.challengeData.filter {
                 $0.type == "main"
             }
-            self.challengeDesc.text = mainChallenge.description
+            DispatchQueue.main.async {
+                mainChallenge[0].queens.sort {
+                    $0.name < $1.name
+                }
+                self.challengeDesc.text = mainChallenge[0].description
+                self.createSnapShot(with: mainChallenge[0].queens)
+            }
         }
     }
 
@@ -74,24 +109,24 @@ class ShowViewController: ViewController {
 
         guard let imageUrl = URL(string: path) else {
             return
-    }
+        }
 
-    let imageFetchTask = URLSession.shared.downloadTask(with: imageUrl){
+        let imageFetchTask = URLSession.shared.downloadTask(with: imageUrl){
         url, response, error in
 
-        if error == nil, let url = url, let data = try? Data(contentsOf: url), let image = UIImage(data: data){
-            DispatchQueue.main.async {
-                //TODO: - add this to the cell
-                cell.queenImage.image = image
+            if error == nil, let url = url, let data = try? Data(contentsOf: url), let image = UIImage(data: data){
+                DispatchQueue.main.async {
+                    //TODO: - add this to the cell
+                    cell.queenImage.image = image
 
+                }
             }
         }
-    }
 
-    imageFetchTask.resume()
+        imageFetchTask.resume()
     }
     
-    func fetchQueens() {
+    func fetchAllQueens() {
         
         if let startURL = Bundle.main.url(forResource: "queens", withExtension: "txt") {
             let queenTask = URLSession.shared.dataTask(with: startURL) {
