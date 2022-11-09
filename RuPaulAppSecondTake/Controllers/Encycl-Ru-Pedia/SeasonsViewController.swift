@@ -71,10 +71,13 @@ class SeasonsViewController: UIViewController {
                     //grabs data from API and converts it into Seasons object.
                     let jsonDecoder = JSONDecoder()
                     let downloadedResults = try jsonDecoder.decode([Season].self, from: someData)
-                    var seasonResults = downloadedResults
-                    seasonResults.sort {
-                        Int($0.seasonNumber) ?? 0 < Int($1.seasonNumber) ?? 0
+                    //var seasonResults = downloadedResults
+                    //sorts seasons alphanumericaly, (Season 1, 2, 3, followed by A1, A2, etc.)
+                    let seasonResults = downloadedResults.sorted {
+                        (rhs: Season, lhs: Season) -> Bool in
+                        return rhs.seasonNumber.localizedStandardCompare(lhs.seasonNumber) == .orderedAscending
                     }
+                    
                     
                     DispatchQueue.main.async {
                         self.createSnapShot(with: seasonResults)
@@ -120,7 +123,6 @@ class SeasonsViewController: UIViewController {
         
         //Get the season selected, and tell next view what episodes to look for.
         guard let index = tableView.indexPathForSelectedRow else { return }
-        
         guard let season = dataSource.itemIdentifier(for: index) else { return }
         
         destinationVC.season = season.id

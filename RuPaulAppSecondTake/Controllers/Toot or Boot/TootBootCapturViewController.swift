@@ -9,6 +9,7 @@ import UIKit
 
 class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegate{
 
+    //MARK: - Properties
     var itemsList: TootBootItems!
     let imagePicker = UIImagePickerController()
     var imageStart: CGPoint!
@@ -47,7 +48,7 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let alert = UIAlertController(title: "Toot or Boot!", message: "Would you like to take a photo?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Toot or Boot!", message: "If you like it, swipe left to TOOT it, otherwise, swipe left to BOOT it.\n Would you like to take a photo?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { (_) in
             //Sets source to camera, and presents the imagePicker
             self.alertHandler(1)
@@ -64,20 +65,19 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         present(alert, animated: true)
     }
     
-    //Alert handler key:
-    //0: Resets the capture without setting the source.
-    //1: Resets the capture, setting the source to "Camrea"
-    //2: Resets the capture, setting the source to "Photo Library"
-    //3: Sends the user to the gallery tab
-    //4: Camera is unavailable. Asks if they want to use Photo Library.
-    
+    //Alert handler helper method
+    //Called to handle various actions in this scene's AlertControllers
     func alertHandler(_ key: Int) {
         switch(key) {
+            
+        //Case 0: Resets the capture without setting the source.
         case 0:
             UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
                 self.TootBootCaptureImage.center = self.imageStart
             }, completion: nil)
             self.present(self.imagePicker, animated: true)
+            
+        //1: Resets the capture, setting the source to "Camrea"
         case 1:
             if UIImagePickerController.isSourceTypeAvailable(.camera){
                             UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
@@ -89,14 +89,20 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
                         //Camera is unavailable; asks if they want to use Library.
                         alertHandler(4)
                     }
+            
+        //2: Resets the capture, setting the source to "Photo Library"
         case 2:
             UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
                             self.TootBootCaptureImage.center = self.imageStart
                         }, completion: nil)
             self.imagePicker.sourceType = .photoLibrary
             self.present(self.imagePicker, animated: true)
+            
+        //3: Sends the user to the gallery tab
         case 3:
             tabBarController?.selectedIndex = 2
+            
+        //4: Camera is unavailable. Asks if they want to use Photo Library.
         case 4:
             let errorAlert = UIAlertController(title: "You do not have access to the camera.", message: "Would you like to use photos from your Photo Library instead?", preferredStyle: .alert)
                         errorAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
@@ -108,6 +114,7 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
                             self.alertHandler(3)
                         }))
             self.present(errorAlert, animated: true)
+            
         default:
             break
         }
@@ -117,6 +124,7 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
     //MARK: - Obj-C Methods
     @objc func viewSwipedLeft() {
         
+        //Image flies off the screen to the left
         let targetSpot = CGPoint(x: -1000, y: TootBootCaptureImage.center.y)
         UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
             self.TootBootCaptureImage.center = targetSpot
@@ -155,6 +163,7 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
     
     @objc func viewSwipedRight() {
         
+        //Image flies off the screen to the right
         let targetSpot = CGPoint(x: 1000, y: TootBootCaptureImage.center.y)
         UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
             self.TootBootCaptureImage.center = targetSpot
@@ -190,8 +199,10 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         present(alert, animated: true)
     }
     
+    //Swiping down cancels the creation of a new gallery item.
     @objc func viewSwipedDown() {
         
+        //image flies off the screen to the bottom
         let targetSpot = CGPoint(x: TootBootCaptureImage.center.x, y: 1600)
         UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
             self.TootBootCaptureImage.center = targetSpot
@@ -219,18 +230,10 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         }))
         present(alert, animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
 
+//MARK: - Extensions
 extension TootBootCapturViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

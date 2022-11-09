@@ -16,25 +16,25 @@ class GalleryViewController: UIViewController {
     var galleryItems = TootBootItems()
     let itemsPerRow: CGFloat = 3
     let itemSpacing: CGFloat = 0
-
+    
     //MARK: - Datasource
-    lazy var datasource = TootBootItemDataSource(collectionView: collectionView) {
+    lazy var datasource = UICollectionViewDiffableDataSource<Section, TootBootItem>(collectionView: collectionView) {
         (collectionView: UICollectionView, indexPath: IndexPath, item: TootBootItem) ->
         UICollectionViewCell in
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TootBootCell", for: indexPath) as! TootBootCell
         
-        cell.CaptureImage.image = self.galleryItems.fetchImage(withIdentifier: item.imageName)
+        cell.captureImage.image = self.galleryItems.fetchImage(withIdentifier: item.imageName)
         
-        if(item.TootOrBoot) {
-            cell.TootBootImage.image = UIImage(named: "TootButton")
+        if(item.tootOrBoot) {
+            cell.tootBootImage.image = UIImage(named: "TootButton")
         } else {
-            cell.TootBootImage.image = UIImage(named: "BootButton")
+            cell.tootBootImage.image = UIImage(named: "BootButton")
         }
         
         if !(item.isNew) {
-            cell.NewItemImage.isHidden = true
+            cell.newItemImage.isHidden = true
         } else {
-            cell.NewItemImage.isHidden = false
+            cell.newItemImage.isHidden = false
         }
         
         return cell

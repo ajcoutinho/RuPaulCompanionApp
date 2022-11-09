@@ -11,10 +11,10 @@
 		E91B711F28F4DD17008A73DD /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B711E28F4DD17008A73DD /* GalleryViewController.swift */; };
 		E91B712128F4DD7E008A73DD /* TootBootItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B712028F4DD7E008A73DD /* TootBootItem.swift */; };
 		E91B712328F4DE11008A73DD /* TootBootItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B712228F4DE11008A73DD /* TootBootItems.swift */; };
-		E91B712628F4DF4E008A73DD /* TootBootItemDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B712528F4DF4E008A73DD /* TootBootItemDataSource.swift */; };
 		E91B712828F4DFB4008A73DD /* TootBootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B712728F4DFB4008A73DD /* TootBootCell.swift */; };
 		E91B712A28F4E50A008A73DD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B712928F4E50A008A73DD /* DetailsViewController.swift */; };
-		E984B77329154DD80037B843 /* queens.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E984B77229154DD80037B843 /* queens.rtf */; };
+		E984B7B5291AF56D0037B843 /* queens.txt in Resources */ = {isa = PBXBuildFile; fileRef = E984B7B4291AF56D0037B843 /* queens.txt */; };
+		E984B7B7291C32440037B843 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984B7B6291C32440037B843 /* Section.swift */; };
 		E984F65428E65CCE0071327E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984F65328E65CCE0071327E /* AppDelegate.swift */; };
 		E984F65628E65CCE0071327E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984F65528E65CCE0071327E /* SceneDelegate.swift */; };
 		E984F65828E65CCE0071327E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984F65728E65CCE0071327E /* ViewController.swift */; };
@@ -38,10 +38,10 @@
 		E91B711E28F4DD17008A73DD /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		E91B712028F4DD7E008A73DD /* TootBootItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootBootItem.swift; sourceTree = "<group>"; };
 		E91B712228F4DE11008A73DD /* TootBootItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootBootItems.swift; sourceTree = "<group>"; };
-		E91B712528F4DF4E008A73DD /* TootBootItemDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootBootItemDataSource.swift; sourceTree = "<group>"; };
 		E91B712728F4DFB4008A73DD /* TootBootCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootBootCell.swift; sourceTree = "<group>"; };
 		E91B712928F4E50A008A73DD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		E984B77229154DD80037B843 /* queens.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = queens.rtf; sourceTree = "<group>"; };
+		E984B7B4291AF56D0037B843 /* queens.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = queens.txt; sourceTree = "<group>"; };
+		E984B7B6291C32440037B843 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		E984F65028E65CCE0071327E /* RuPaulAppSecondTake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuPaulAppSecondTake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E984F65328E65CCE0071327E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E984F65528E65CCE0071327E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,14 +73,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E91B712428F4DF32008A73DD /* Data Source */ = {
-			isa = PBXGroup;
-			children = (
-				E91B712528F4DF4E008A73DD /* TootBootItemDataSource.swift */,
-			);
-			path = "Data Source";
-			sourceTree = "<group>";
-		};
 		E984B76F2915450D0037B843 /* Encycl-Ru-Pedia */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +119,6 @@
 		E984F65228E65CCE0071327E /* RuPaulAppSecondTake */ = {
 			isa = PBXGroup;
 			children = (
-				E91B712428F4DF32008A73DD /* Data Source */,
 				E98A9BC928E7224B0076DB39 /* Cells */,
 				E98A9BC628E721DB0076DB39 /* Data Items */,
 				E98A9BC528E721BB0076DB39 /* Controllers */,
@@ -156,13 +147,14 @@
 		E98A9BC628E721DB0076DB39 /* Data Items */ = {
 			isa = PBXGroup;
 			children = (
-				E984B77229154DD80037B843 /* queens.rtf */,
+				E984B7B4291AF56D0037B843 /* queens.txt */,
 				E98A9BC728E722080076DB39 /* Season.swift */,
 				E98A9BCC28E726140076DB39 /* Episode.swift */,
 				E98A9BD828E72E850076DB39 /* Queen.swift */,
 				E98A9BDC28E72FD20076DB39 /* Challenge.swift */,
 				E91B712028F4DD7E008A73DD /* TootBootItem.swift */,
 				E91B712228F4DE11008A73DD /* TootBootItems.swift */,
+				E984B7B6291C32440037B843 /* Section.swift */,
 			);
 			path = "Data Items";
 			sourceTree = "<group>";
@@ -236,7 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E984F66328E65CD10071327E /* LaunchScreen.storyboard in Resources */,
-				E984B77329154DD80037B843 /* queens.rtf in Resources */,
+				E984B7B5291AF56D0037B843 /* queens.txt in Resources */,
 				E984F66028E65CD10071327E /* Assets.xcassets in Resources */,
 				E984F65B28E65CCE0071327E /* Main.storyboard in Resources */,
 			);
@@ -250,8 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E98A9BD128E727370076DB39 /* EpisodesViewController.swift in Sources */,
-				E91B712628F4DF4E008A73DD /* TootBootItemDataSource.swift in Sources */,
 				E984F65828E65CCE0071327E /* ViewController.swift in Sources */,
+				E984B7B7291C32440037B843 /* Section.swift in Sources */,
 				E91B712328F4DE11008A73DD /* TootBootItems.swift in Sources */,
 				E98A9BCD28E726140076DB39 /* Episode.swift in Sources */,
 				E98A9BD928E72E850076DB39 /* Queen.swift in Sources */,

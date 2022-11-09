@@ -9,8 +9,8 @@ import UIKit
 
 class TootBootCell: UICollectionViewCell {
     
-    @IBOutlet weak var CaptureImage: UIImageView!
-    @IBOutlet weak var TootBootImage: UIImageView!
-    @IBOutlet weak var NewItemImage: UIImageView!
+    @IBOutlet weak var captureImage: UIImageView!
+    @IBOutlet weak var tootBootImage: UIImageView!
+    @IBOutlet weak var newItemImage: UIImageView!
     
 }

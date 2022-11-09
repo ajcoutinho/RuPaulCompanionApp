@@ -69,6 +69,7 @@ class EpisodesViewController: UIViewController {
                         let jsonDecoder = JSONDecoder()
                         let downloadedResults = try jsonDecoder.decode([Episode].self, from: someData)
                         var episodeResults = downloadedResults
+                        //Sorts episodes in ascending order
                         episodeResults.sort {
                             $0.episodeInSeason < $1.episodeInSeason
                         }
@@ -93,11 +94,9 @@ class EpisodesViewController: UIViewController {
         
         //Get the episode selected, and tell next view what episodes to look for.
         guard let index = tableView.indexPathForSelectedRow else { return }
-        
         guard let episode = dataSource.itemIdentifier(for: index) else { return }
         
-        destinationVC.season = season
-        
+        //Passes episode id, to be used in next API call
         destinationVC.episode = episode.id
     }
     

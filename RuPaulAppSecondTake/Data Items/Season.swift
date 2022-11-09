@@ -7,11 +7,6 @@
 
 import Foundation
 
-//Section Enum
-enum Section: Hashable {
-    case main
-}
-
 struct Season: Codable, Hashable {
     var id: Int
     var seasonNumber: String

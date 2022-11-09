@@ -10,6 +10,7 @@ import UIKit
 
 class TootBootItems: Codable {
     
+    //MARK: - Properties
     var itemsList = [TootBootItem]()
     
     var documentLibrary: URL? {
@@ -20,6 +21,7 @@ class TootBootItems: Codable {
         return paths[0]
     }
     
+    //MARK: - Methods
     func addItem(item: TootBootItem) {
         itemsList.append(item)
         

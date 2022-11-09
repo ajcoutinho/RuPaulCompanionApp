@@ -27,9 +27,9 @@ class DetailsViewController: UIViewController {
         critiques.delegate = self
 
         if let item = item {
-            subject.text = item.Queen
-            critiques.text = item.Critique
-            if item.TootOrBoot {
+            subject.text = item.subject
+            critiques.text = item.critique
+            if item.tootOrBoot {
                 tootBoot.image = UIImage(named: "TootButton")
             } else {
                 tootBoot.image = UIImage(named: "BootButton")
@@ -39,7 +39,7 @@ class DetailsViewController: UIViewController {
             imageTapped.delegate = self
             tootBoot.addGestureRecognizer(imageTapped)
             
-            image.image = item.fetchImage(withIdentifier: item.imageName)
+            image.image = items.fetchImage(withIdentifier: item.imageName)
             
             item.isNew = false
             
@@ -47,10 +47,11 @@ class DetailsViewController: UIViewController {
         }
     }
     
+    //MARK: Objective-C Methods
     @objc func imageTapped() {
         if let item = item {
-            item.TootOrBoot.toggle()
-            if item.TootOrBoot {
+            item.tootOrBoot.toggle()
+            if item.tootOrBoot {
                 tootBoot.image = UIImage(named: "TootButton")
             } else {
                 tootBoot.image = UIImage(named: "BootButton")
@@ -60,12 +61,12 @@ class DetailsViewController: UIViewController {
     }
     
     
-    
+    //MARK: - Actions
     @IBAction func saveInfo(_ sender: Any) {
         
         if let item = item {
-            item.Queen = subject.text
-            item.Critique = critiques.text
+            item.subject = subject.text
+            item.critique = critiques.text
             items.saveItems()
             
             let alert = UIAlertController(title: "Info saved!", message: nil, preferredStyle: .alert)
