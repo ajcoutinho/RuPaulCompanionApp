@@ -16,8 +16,22 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FullImage" translatesAutoresizingMaskIntoConstraints="NO" id="QtA-Tt-pCe">
+                                <rect key="frame" x="8" y="149.5" width="398" height="597"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QtA-Tt-pCe" secondAttribute="height" multiplier="2:3" id="x6L-kk-FkK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QtA-Tt-pCe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HSN-12-bey"/>
+                            <constraint firstItem="QtA-Tt-pCe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hHg-eC-47a"/>
+                            <constraint firstItem="QtA-Tt-pCe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="jAb-ST-kKr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QtA-Tt-pCe" secondAttribute="trailing" constant="8" id="kLd-EU-0Ix"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="B6f-on-28j"/>
                 </viewController>
@@ -119,12 +133,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z8S-f2-v5z">
-                                <rect key="frame" x="8" y="249" width="398" height="398"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Z8S-f2-v5z" secondAttribute="height" multiplier="1:1" id="EbN-Uv-X8s"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMP-ci-I7w" userLabel="swipeView">
                                 <rect key="frame" x="207" y="91" width="199" height="150"/>
                                 <subviews>
@@ -220,6 +228,12 @@
                                     <constraint firstItem="U7W-Wl-Rfr" firstAttribute="centerY" secondItem="4lG-w1-mPw" secondAttribute="centerY" id="gHk-dr-9sK"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z8S-f2-v5z">
+                                <rect key="frame" x="8" y="249" width="398" height="398"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Z8S-f2-v5z" secondAttribute="height" multiplier="1:1" id="EbN-Uv-X8s"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="orq-S9-eW6"/>
                         <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -266,7 +280,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kq0-Qe-RGs">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="seasonCell" rowHeight="90" id="2BK-wC-w0r" customClass="SeasonCell" customModule="RuPaulAppSecondTake" customModuleProvider="target">
@@ -295,7 +309,7 @@
                                                 <constraint firstItem="u8q-cd-IYw" firstAttribute="top" secondItem="JXZ-fM-NEj" secondAttribute="top" id="pGw-Oj-Joo"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="seasonImage" destination="u8q-cd-IYw" id="egb-sM-AjL"/>
                                             <outlet property="seasonTitle" destination="XjG-OX-jFK" id="e8t-NJ-WnA"/>
@@ -311,7 +325,7 @@
                             <constraint firstItem="Kq0-Qe-RGs" firstAttribute="top" secondItem="6tf-l0-Gyt" secondAttribute="top" id="KAc-pS-TzC"/>
                             <constraint firstItem="Kq0-Qe-RGs" firstAttribute="trailing" secondItem="6tf-l0-Gyt" secondAttribute="trailing" id="cNM-8W-SMb"/>
                             <constraint firstItem="Kq0-Qe-RGs" firstAttribute="leading" secondItem="6tf-l0-Gyt" secondAttribute="leading" id="p8m-oa-HPu"/>
-                            <constraint firstItem="6tf-l0-Gyt" firstAttribute="bottom" secondItem="Kq0-Qe-RGs" secondAttribute="bottom" constant="-83" id="rvI-Wm-cce"/>
+                            <constraint firstItem="6tf-l0-Gyt" firstAttribute="bottom" secondItem="Kq0-Qe-RGs" secondAttribute="bottom" id="rvI-Wm-cce"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ijA-Dk-bPC"/>
@@ -351,7 +365,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="DcT-7Y-Ruu" kind="show" id="ZWx-3H-tVO"/>
                                         </connections>
@@ -417,8 +431,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0U2-RW-oQb">
-                                                                    <rect key="frame" x="20" y="1.5" width="92" height="89"/>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="0U2-RW-oQb">
+                                                                    <rect key="frame" x="20" y="0.0" width="92" height="92"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="0U2-RW-oQb" secondAttribute="height" multiplier="1:1" id="8Wu-xS-eOa"/>
                                                                     </constraints>
@@ -440,7 +454,7 @@
                                                                 <constraint firstAttribute="bottom" secondItem="0U2-RW-oQb" secondAttribute="bottom" id="xUs-Fe-oCP"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
-                                                        <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <outlet property="queenImage" destination="0U2-RW-oQb" id="rb9-Ut-jm1"/>
                                                             <outlet property="queenLabel" destination="qKg-vE-Mmm" id="qle-c1-yag"/>
@@ -512,7 +526,7 @@
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wef-kp-DAh">
                                                 <rect key="frame" x="109" y="503" width="277" height="200"/>
-                                                <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="jle-wA-qrl"/>
@@ -712,9 +726,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BootButton" width="500" height="500"/>
-        <image name="NewIcon" width="500" height="500"/>
-        <image name="TootButton" width="500" height="500"/>
+        <image name="BootButton" width="128" height="128"/>
+        <image name="FullImage" width="353" height="707"/>
+        <image name="NewIcon" width="128" height="128"/>
+        <image name="Profile" width="128" height="128"/>
+        <image name="TootButton" width="128" height="128"/>
         <image name="arrow.down" catalog="system" width="120" height="128"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
@@ -722,7 +738,6 @@
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="person.crop.artframe" catalog="system" width="115" height="128"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

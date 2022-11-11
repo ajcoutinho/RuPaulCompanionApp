@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "NewIcon.png",
+      "filename" : "CrowdShot.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "NewIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "NewIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
