@@ -18,17 +18,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FullImage" translatesAutoresizingMaskIntoConstraints="NO" id="BnH-3x-wXk">
                                 <rect key="frame" x="8" y="149.5" width="398" height="597"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="BnH-3x-wXk" secondAttribute="height" multiplier="2:3" id="KrK-f6-4UZ"/>
+                                    <constraint firstAttribute="width" secondItem="BnH-3x-wXk" secondAttribute="height" multiplier="2:3" id="COj-PU-NkH"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BnH-3x-wXk" secondAttribute="trailing" constant="8" id="1rZ-zf-1Q3"/>
-                            <constraint firstItem="BnH-3x-wXk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="At6-va-6KQ"/>
-                            <constraint firstItem="BnH-3x-wXk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FSM-bM-zrE"/>
-                            <constraint firstItem="BnH-3x-wXk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nfE-DZ-ozL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BnH-3x-wXk" secondAttribute="trailing" constant="8" id="2Ud-a8-Oj3"/>
+                            <constraint firstItem="BnH-3x-wXk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="8tG-f1-zDA"/>
+                            <constraint firstItem="BnH-3x-wXk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NXW-Zt-Oec"/>
+                            <constraint firstItem="BnH-3x-wXk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ONz-N2-iPM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FullImage" width="353" height="707"/>
+        <image name="FullImage" width="160" height="600"/>
     </resources>
 </document>

@@ -28,6 +28,8 @@ class ShowViewController: ViewController {
             if Queen.id == queen.id {
                 if let path = queen.image {
                     self.fetchImage(for: path, in: cell)
+                } else {
+                    cell.queenImage.image = UIImage(named: "Profile")
                 }
             }
         }
