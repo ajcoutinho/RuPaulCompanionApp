@@ -16,17 +16,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FullImage" translatesAutoresizingMaskIntoConstraints="NO" id="BnH-3x-wXk">
-                                <rect key="frame" x="8" y="52" width="398" height="802"/>
+                                <rect key="frame" x="127" y="148" width="160" height="600"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BnH-3x-wXk" secondAttribute="trailing" constant="8" id="2Ud-a8-Oj3"/>
-                            <constraint firstItem="BnH-3x-wXk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="8tG-f1-zDA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BnH-3x-wXk" secondAttribute="bottom" constant="8" id="Tzo-Ui-g8A"/>
-                            <constraint firstItem="BnH-3x-wXk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="w1z-2l-Qps"/>
+                            <constraint firstItem="BnH-3x-wXk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4Rf-yd-rvX"/>
+                            <constraint firstItem="BnH-3x-wXk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="CGO-B4-fda"/>
+                            <constraint firstItem="BnH-3x-wXk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="Gy6-yS-qnn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BnH-3x-wXk" secondAttribute="bottom" constant="32" id="Uk7-Kj-Y1l"/>
+                            <constraint firstItem="BnH-3x-wXk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="tyW-Qp-Y0l"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Uk7-Kj-Y1l"/>
+                                <exclude reference="CGO-B4-fda"/>
+                                <exclude reference="Gy6-yS-qnn"/>
+                                <exclude reference="tyW-Qp-Y0l"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="tyW-Qp-Y0l"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="tyW-Qp-Y0l"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Uk7-Kj-Y1l"/>
+                                <include reference="CGO-B4-fda"/>
+                                <include reference="Gy6-yS-qnn"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="Uk7-Kj-Y1l"/>
+                                <include reference="CGO-B4-fda"/>
+                                <include reference="Gy6-yS-qnn"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

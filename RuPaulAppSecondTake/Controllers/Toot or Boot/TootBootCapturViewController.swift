@@ -16,6 +16,7 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
 
     //MARK: - Outlets
     @IBOutlet weak var TootBootCaptureImage: UIImageView!
+    @IBOutlet weak var TootBootLabel: UILabel!
     
     //MARK: - Load Method
     override func viewDidLoad() {
