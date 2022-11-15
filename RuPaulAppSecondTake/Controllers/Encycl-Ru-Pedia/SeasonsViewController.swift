@@ -39,6 +39,8 @@ class SeasonsViewController: UIViewController {
             tableView.delegate = self
             
             fetchSeasons()
+            
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(displayInfo))
         }
     
     //MARK: - Methods
@@ -115,6 +117,14 @@ class SeasonsViewController: UIViewController {
         }
 
         imageFetchTask.resume()
+    }
+    
+    //MARK: - Objective-C Methods
+    @objc func displayInfo() {
+        let alert = UIAlertController(title: "Seasons", message: "This is a list of all the seasons of RuPaul's Drag Race and RuPaul's Drag Race: All-Stars. Select a row to see a list of all episodes in that season.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Got it", style: .default))
+        
+        present(alert, animated: true)
     }
     
     //MARK: - Transition Method

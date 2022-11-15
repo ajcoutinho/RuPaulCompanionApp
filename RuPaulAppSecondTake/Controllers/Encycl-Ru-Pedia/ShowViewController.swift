@@ -46,6 +46,8 @@ class ShowViewController: ViewController {
         super.viewDidLoad()
     
         fetchAllQueens()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(displayInfo))
     }
     
     //MARK: - Methods
@@ -164,6 +166,14 @@ class ShowViewController: ViewController {
                 self.createSnapShot(with: mainChallenge[0].queens)
             }
         }
+    }
+    
+    //MARK: - Objective-C Functions
+    @objc override func displayInfo() {
+        let alert = UIAlertController(title: "Episode Details", message: "This is the episode's details. It includes the episode's Challenge descriptions, and a list of all Queens that participated.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Got it", style: .default))
+        
+        present(alert, animated: true)
     }
 
 }

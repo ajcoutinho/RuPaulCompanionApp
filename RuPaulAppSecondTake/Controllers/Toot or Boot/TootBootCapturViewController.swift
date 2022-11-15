@@ -22,6 +22,7 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Gets the starting point of the imageview
         imageStart = CGPoint(x: TootBootCaptureImage.center.x, y: TootBootCaptureImage.center.y)
 
         TootBootCaptureImage.isUserInteractionEnabled = true
@@ -45,6 +46,8 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         imagePicker.allowsEditing = true
         
         imagePicker.delegate = self
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(displayInfo))
         
     }
     
@@ -231,7 +234,13 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         }))
         present(alert, animated: true)
     }
-   
+    
+    @objc func displayInfo() {
+        let alert = UIAlertController(title: "Toot or Boot", message: "If you like something, swipe the image left to TOOT it. If not, swipe right to BOOT it. Either way, the image is added to the Gallery. Swipe down to discard the image and take another photo.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Got it", style: .default))
+        
+        present(alert, animated: true)
+    }
 }
 
 //MARK: - Extensions
@@ -243,6 +252,18 @@ extension TootBootCapturViewController: UIImagePickerControllerDelegate, UINavig
         TootBootCaptureImage.image = image
         
         self.dismiss(animated: true)
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true)
+        
+        self.alertHandler(3)
+        
+        let alert = UIAlertController(title: "Canceled Photo selection", message: "Navigating to Gallery", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        present(alert, animated: true)
     }
     
 }

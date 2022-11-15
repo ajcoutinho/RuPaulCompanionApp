@@ -37,6 +37,8 @@ class EpisodesViewController: UIViewController {
         tableView.delegate = self
         
         fetchEpisodes()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(displayInfo))
     }
     
     //MARK: - Methods
@@ -86,6 +88,14 @@ class EpisodesViewController: UIViewController {
             }
             episodeTask.resume()
         }
+    }
+    
+    //MARK: - Objective-C Methods
+    @objc func displayInfo() {
+        let alert = UIAlertController(title: "Episodes", message: "This is a list of the episodes from the selected season. Select a row to see that episode's details.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Got it", style: .default))
+        
+        present(alert, animated: true)
     }
     
     //MARK: - Transistion Method

@@ -47,6 +47,8 @@ class GalleryViewController: UIViewController {
         collectionView.delegate = self
         
         createInitialSnapshot(for: galleryItems.itemsList)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(displayInfo))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,6 +81,14 @@ class GalleryViewController: UIViewController {
         let destinationVC = segue.destination as! DetailsViewController
         destinationVC.items = galleryItems
         destinationVC.item = selectedItem
+    }
+    
+    //MARK: - Objective-C Functions
+    @objc func displayInfo() {
+        let alert = UIAlertController(title: "Gallery", message: "See all of the images that you either TOOTed or BOOTed. Tap on an image to see/add more details.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Got it", style: .default))
+        
+        present(alert, animated: true)
     }
 
 }

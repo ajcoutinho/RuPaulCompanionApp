@@ -44,6 +44,8 @@ class DetailsViewController: UIViewController {
             item.isNew = false
             
             items.saveItems()
+            
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(displayInfo))
         }
     }
     
@@ -60,6 +62,12 @@ class DetailsViewController: UIViewController {
         }
     }
     
+    @objc func displayInfo() {
+        let alert = UIAlertController(title: "Details", message: "This is the details of the selected Gallery item.\nYou can add the subject's name, and any critiques regarding why you TOOTed/BOOTed the item.\nTap the TOOT/BOOT button to swap your preference.\nWhen you are done, be ure to save your work at the bottom.\nYou can also delete this item from your gallery from this page.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Got it", style: .default))
+        
+        present(alert, animated: true)
+    }
     
     //MARK: - Actions
     @IBAction func saveInfo(_ sender: Any) {
@@ -77,7 +85,7 @@ class DetailsViewController: UIViewController {
     
     @IBAction func deleteItem(_ sender: Any) {
         
-        let alert = UIAlertController(title: "Delete Item", message: "Are you sure you want to delete this item?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Delete Item", message: "Are you sure you want to delete this item? This cannot be undone.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
             if let item = self.item {
                 self.items.deleteImage(withIdentifier: item.imageName)
