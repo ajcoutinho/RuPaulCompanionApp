@@ -23,7 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         guard let rootVC = window?.rootViewController as? UITabBarController,
-              let tootBootVC = rootVC.viewControllers?[3] as? TootBootCapturViewController,
+              let tootBootNavVC = rootVC.viewControllers?[3] as? UINavigationController,
+              let tootBootVC = tootBootNavVC.viewControllers[0] as? TootBootCapturViewController,
               let galleryNavVC = rootVC.viewControllers?[2] as? UINavigationController,
               let galleryVC = galleryNavVC.viewControllers[0] as? GalleryViewController
         else { return }
