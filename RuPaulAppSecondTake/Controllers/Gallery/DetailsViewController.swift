@@ -63,7 +63,7 @@ class DetailsViewController: UIViewController {
     }
     
     @objc func displayInfo() {
-        let alert = UIAlertController(title: "Details", message: "This is the details of the selected Gallery item.\nYou can add the subject's name, and any critiques regarding why you TOOTed/BOOTed the item.\nTap the TOOT/BOOT button to swap your preference.\nWhen you are done, be ure to save your work at the bottom.\nYou can also delete this item from your gallery from this page.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Details", message: "This is the details of the selected Gallery item.\nYou can add the subject's name, and any critiques regarding why you TOOTed/BOOTed the item.\nTap the TOOT/BOOT button to swap your preference.\nWhen you are done, be sure to save your work at the bottom.\nYou can also delete this item from your gallery from this page.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Got it", style: .default))
         
         present(alert, animated: true)

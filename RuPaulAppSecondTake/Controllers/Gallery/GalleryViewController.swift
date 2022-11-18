@@ -85,7 +85,7 @@ class GalleryViewController: UIViewController {
     
     //MARK: - Objective-C Functions
     @objc func displayInfo() {
-        let alert = UIAlertController(title: "Gallery", message: "See all of the images that you either TOOTed or BOOTed. Tap on an image to see/add more details.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Gallery", message: "See all of the images that you either TOOTed or BOOTed. If there is nothing here, add one in the Toot or Boot section. Tap on an image to see/add more details.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Got it", style: .default))
         
         present(alert, animated: true)
