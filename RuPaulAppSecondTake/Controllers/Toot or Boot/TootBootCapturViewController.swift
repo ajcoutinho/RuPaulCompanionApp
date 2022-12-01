@@ -131,22 +131,23 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
     @objc func viewSwipedLeft() {
         
         //Image flies off the screen to the left
-        let targetSpot = CGPoint(x: -1000, y: TootBootCaptureImage.center.y)
+        guard let image = self.TootBootCaptureImage.image else { return }
         UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
-            self.TootBootCaptureImage.center = targetSpot
+            self.TootBootCaptureImage.transform = CGAffineTransform(translationX: -1000, y: 0)
         }, completion: {
             _ in
-            //Saves an item to the gallery list, with the TootBoot set to 'true'
-            if let image = self.TootBootCaptureImage.image {
-                let imageName = UUID().uuidString
-                let newItem = TootBootItem(photo: imageName, TootBoot: true)
-                self.itemsList.saveImage(image: image, withIdentifier: imageName)
-                self.itemsList.addItem(item: newItem)
-                    }
             //Removes the image, and returns it to the center
-            self.TootBootCaptureImage.image = nil
-            self.TootBootCaptureImage.transform = .identity
+            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+                self.TootBootCaptureImage.image = nil
+                self.TootBootCaptureImage.transform = CGAffineTransform.identity
+            })
         })
+        
+        //Saves an item to the gallery list, with the TootBoot set to 'true'
+        let imageName = UUID().uuidString
+        let newItem = TootBootItem(photo: imageName, TootBoot: true)
+        self.itemsList.saveImage(image: image, withIdentifier: imageName)
+        self.itemsList.addItem(item: newItem)
         
         let alert = UIAlertController(title: "Toot!", message: "Would you like to take another?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
@@ -174,24 +175,24 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
     @objc func viewSwipedRight() {
         
         //Image flies off the screen to the right
-        let targetSpot = CGPoint(x: 1000, y: TootBootCaptureImage.center.y)
+        guard let image = self.TootBootCaptureImage.image else { return }
         UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
-            self.TootBootCaptureImage.center = targetSpot
+            self.TootBootCaptureImage.transform = CGAffineTransform(translationX: 1000, y: 0)
         }, completion: {
             _ in
-            //Saves an item to the gallery list, with the TootBoot set to 'false'
-            if let image = self.TootBootCaptureImage.image {
-                let imageName = UUID().uuidString
-                let newItem = TootBootItem(photo: imageName, TootBoot: false)
-                self.itemsList.saveImage(image: image, withIdentifier: imageName)
-                self.itemsList.addItem(item: newItem)
-            }
+            
             //Remove the image, and return it to the center
-            self.TootBootCaptureImage.image = nil
-            self.TootBootCaptureImage.transform = .identity
+            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+                self.TootBootCaptureImage.image = nil
+                self.TootBootCaptureImage.transform = CGAffineTransform.identity
+            })
         })
         
-        
+        //Saves an item to the gallery list, with the TootBoot set to 'false'
+        let imageName = UUID().uuidString
+        let newItem = TootBootItem(photo: imageName, TootBoot: false)
+        self.itemsList.saveImage(image: image, withIdentifier: imageName)
+        self.itemsList.addItem(item: newItem)
         
         let alert = UIAlertController(title: "Boot!", message: "Would you like to take another?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
@@ -220,14 +221,15 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
     @objc func viewSwipedDown() {
         
         //image flies off the screen to the bottom
-        let targetSpot = CGPoint(x: TootBootCaptureImage.center.x, y: 1600)
         UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
-            self.TootBootCaptureImage.center = targetSpot
+            self.TootBootCaptureImage.transform = CGAffineTransform(translationX: 0, y: 1600)
         }, completion: {
             _ in
             //Remove the image, and return it to the center
-            self.TootBootCaptureImage.image = nil
-            self.TootBootCaptureImage.transform = .identity
+            UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+                self.TootBootCaptureImage.image = nil
+                self.TootBootCaptureImage.transform = CGAffineTransform.identity
+            })
         })
         
         let alert = UIAlertController(title: "Image discarded", message: "Would you like to try again?", preferredStyle: .alert)
