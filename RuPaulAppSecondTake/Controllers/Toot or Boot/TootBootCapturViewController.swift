@@ -47,25 +47,15 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         imagePicker.delegate = self
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(displayInfo))
+        //Temporary call to initial alert. Need to find why camera calls viewWillAppear and photo library does not
+        navigationItem.backBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "camera.circle"), style: .plain, target: self, action: #selector(firstCall))
         
+        firstCall()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let alert = UIAlertController(title: "Toot or Boot!", message: "If you like it, swipe left to TOOT it, otherwise, swipe left to BOOT it.\n Would you like to take a photo?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { (_) in
-            //Sets source to camera, and presents the imagePicker
-            self.alertHandler(1)
-        }))
-        alert.addAction(UIAlertAction(title: "Use photo in Library", style: .default, handler: { (_) in
-            //Sets source to Library, and presents the imagePicker
-            self.alertHandler(2)
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
-            //Goes to the Gallery.
-            self.alertHandler(3)
-        }))
         
-        present(alert, animated: true)
     }
     
     //Alert handler helper method
@@ -252,6 +242,24 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
             // Goes to the gallery
             self.alertHandler(3)
         }))
+        present(alert, animated: true)
+    }
+    
+    @objc func firstCall() {
+        let alert = UIAlertController(title: "Toot or Boot!", message: "If you like it, swipe left to TOOT it, otherwise, swipe left to BOOT it.\n Would you like to take a photo?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { (_) in
+            //Sets source to camera, and presents the imagePicker
+            self.alertHandler(1)
+        }))
+        alert.addAction(UIAlertAction(title: "Use photo in Library", style: .default, handler: { (_) in
+            //Sets source to Library, and presents the imagePicker
+            self.alertHandler(2)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
+            //Goes to the Gallery.
+            self.alertHandler(3)
+        }))
+        
         present(alert, animated: true)
     }
     
