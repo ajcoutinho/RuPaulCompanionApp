@@ -13,6 +13,9 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
     var itemsList: TootBootItems!
     let imagePicker = UIImagePickerController()
     var imageStart: CGPoint!
+    
+    //tracks if Camera is being used or not.
+    var usingCamera = false
 
     //MARK: - Outlets
     @IBOutlet weak var TootBootCaptureImage: UIImageView!
@@ -48,13 +51,22 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(displayInfo))
         //Temporary call to initial alert. Need to find why camera calls viewWillAppear and photo library does not
-        navigationItem.backBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "camera.circle"), style: .plain, target: self, action: #selector(firstCall))
+        //navigationItem.backBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "camera.circle"), style: .plain, target: self, action: #selector(firstCall))
         
-        firstCall()
+        //firstCall()
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        //camera has been used
+        if(usingCamera) {
+            usingCamera = false
+            return
+        } else {
+            //camera has not been used, i.e. entered from a tab.
+            firstCall()
+        }
         
     }
     
@@ -68,7 +80,9 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
             //UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
             //    self.TootBootCaptureImage.transform = .identity
             //}, completion: nil)
-            
+            if(self.imagePicker.sourceType == .camera) {
+                usingCamera = true
+            }
             self.present(self.imagePicker, animated: true)
             
         //1: Resets the capture, setting the source to "Camrea"
@@ -79,6 +93,7 @@ class TootBootCapturViewController: UIViewController, UIGestureRecognizerDelegat
                 //}, completion: nil)
                 
                 self.imagePicker.sourceType = .camera
+                self.usingCamera = true
                 self.present(self.imagePicker, animated: true)
                     } else {
                         //Camera is unavailable; asks if they want to use Library.
@@ -285,8 +300,6 @@ extension TootBootCapturViewController: UIImagePickerControllerDelegate, UINavig
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true)
-        
-        //self.alertHandler(3)
         
         let alert = UIAlertController(title: "Canceled Photo selection", message: "Did you want to try again?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in

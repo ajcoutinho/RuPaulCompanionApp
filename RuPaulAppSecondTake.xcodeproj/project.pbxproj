@@ -42,7 +42,7 @@
 		E91B712928F4E50A008A73DD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E984B7B4291AF56D0037B843 /* queens.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = queens.txt; sourceTree = "<group>"; };
 		E984B7B6291C32440037B843 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
-		E984F65028E65CCE0071327E /* RuPaulAppSecondTake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuPaulAppSecondTake.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E984F65028E65CCE0071327E /* RuPaul Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RuPaul Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E984F65328E65CCE0071327E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E984F65528E65CCE0071327E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E984F65728E65CCE0071327E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		E984F65128E65CCE0071327E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E984F65028E65CCE0071327E /* RuPaulAppSecondTake.app */,
+				E984F65028E65CCE0071327E /* RuPaul Companion.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			);
 			name = RuPaulAppSecondTake;
 			productName = RuPaulAppSecondTake;
-			productReference = E984F65028E65CCE0071327E /* RuPaulAppSecondTake.app */;
+			productReference = E984F65028E65CCE0071327E /* RuPaul Companion.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -407,7 +407,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6PZ8R625NE;
+				DEVELOPMENT_TEAM = N9MVWRF5AV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RuPaulAppSecondTake/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -422,7 +422,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Alex.RuPaulAppSecondTake;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "RuPaul Companion";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -436,7 +436,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6PZ8R625NE;
+				DEVELOPMENT_TEAM = N9MVWRF5AV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RuPaulAppSecondTake/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -451,7 +451,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Alex.RuPaulAppSecondTake;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "RuPaul Companion";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

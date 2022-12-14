@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mnb-eO-j7l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mnb-eO-j7l">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -12,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RuPaulAppSecondTake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RuPaul_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,13 +73,13 @@
         <!--Gallery View Controller-->
         <scene sceneID="rZR-Qm-h9g">
             <objects>
-                <viewController id="dLI-be-xcj" customClass="GalleryViewController" customModule="RuPaulAppSecondTake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dLI-be-xcj" customClass="GalleryViewController" customModule="RuPaul_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="48e-P6-Vaj">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NjZ-0F-uHP">
-                                <rect key="frame" x="0.0" y="88" width="428" height="755"/>
+                                <rect key="frame" x="0.0" y="91" width="428" height="752"/>
                                 <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bZ6-bO-vUd">
                                     <size key="itemSize" width="128" height="128"/>
@@ -87,7 +88,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TootBootCell" id="3P3-0k-Rel" customClass="TootBootCell" customModule="RuPaulAppSecondTake" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TootBootCell" id="3P3-0k-Rel" customClass="TootBootCell" customModule="RuPaul_Companion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4fd-nR-96I">
@@ -158,13 +159,13 @@
         <!--Toot Boot Captur View Controller-->
         <scene sceneID="Y0D-AW-zOE">
             <objects>
-                <viewController id="4uw-Mc-fIK" customClass="TootBootCapturViewController" customModule="RuPaulAppSecondTake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4uw-Mc-fIK" customClass="TootBootCapturViewController" customModule="RuPaul_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Kc-1R-Q36">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="brN-hf-HzM">
-                                <rect key="frame" x="8" y="96" width="412" height="739"/>
+                                <rect key="frame" x="8" y="99" width="412" height="736"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="ZU6-Xd-qtX">
                                         <rect key="frame" x="0.0" y="0.0" width="412" height="125"/>
@@ -209,10 +210,10 @@
                                         <variation key="heightClass=compact" axis="vertical"/>
                                     </stackView>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="Z8S-f2-v5z">
-                                        <rect key="frame" x="0.0" y="125" width="412" height="489"/>
+                                        <rect key="frame" x="0.0" y="125" width="412" height="486"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="gFL-Re-NEK">
-                                        <rect key="frame" x="0.0" y="614" width="412" height="125"/>
+                                        <rect key="frame" x="0.0" y="611" width="412" height="125"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="aTF-cJ-Ecc">
                                                 <rect key="frame" x="0.0" y="0.0" width="188" height="125"/>
@@ -286,20 +287,20 @@
         <!--Seasons View Controller-->
         <scene sceneID="hVJ-7S-oH3">
             <objects>
-                <viewController id="724-QW-7bd" customClass="SeasonsViewController" customModule="RuPaulAppSecondTake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="724-QW-7bd" customClass="SeasonsViewController" customModule="RuPaul_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qh0-Cc-Ykq">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kq0-Qe-RGs">
-                                <rect key="frame" x="0.0" y="88" width="428" height="755"/>
+                                <rect key="frame" x="0.0" y="91" width="428" height="752"/>
                                 <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="seasonCell" rowHeight="90" id="2BK-wC-w0r" customClass="SeasonCell" customModule="RuPaulAppSecondTake" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="seasonCell" rowHeight="90" id="2BK-wC-w0r" customClass="SeasonCell" customModule="RuPaul_Companion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="428" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2BK-wC-w0r" id="JXZ-fM-NEj">
-                                            <rect key="frame" x="0.0" y="0.0" width="399.33333333333331" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="397.66666666666669" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season S99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjG-OX-jFK">
@@ -309,7 +310,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8q-cd-IYw">
-                                                    <rect key="frame" x="127.99999999999997" y="0.0" width="271.33333333333326" height="90"/>
+                                                    <rect key="frame" x="128.00000000000003" y="0.0" width="269.66666666666674" height="90"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -353,24 +354,24 @@
         <!--Episodes View Controller-->
         <scene sceneID="7G0-ou-hIx">
             <objects>
-                <viewController id="d2o-yX-f8b" customClass="EpisodesViewController" customModule="RuPaulAppSecondTake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d2o-yX-f8b" customClass="EpisodesViewController" customModule="RuPaul_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H3U-0N-Ezy">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nBr-R2-AfD">
-                                <rect key="frame" x="0.0" y="88" width="428" height="755"/>
+                                <rect key="frame" x="0.0" y="91" width="428" height="752"/>
                                 <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="episodeCell" textLabel="M2I-DV-sYi" rowHeight="56" style="IBUITableViewCellStyleDefault" id="Aat-nt-7t7">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="56"/>
+                                        <rect key="frame" x="0.0" y="50" width="428" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aat-nt-7t7" id="eqG-oE-zNq">
-                                            <rect key="frame" x="0.0" y="0.0" width="399.33333333333331" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="397.66666666666669" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M2I-DV-sYi">
-                                                    <rect key="frame" x="20" y="0.0" width="371.33333333333331" height="56"/>
+                                                    <rect key="frame" x="20" y="0.0" width="369.66666666666669" height="56"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
@@ -407,7 +408,7 @@
         <!--Show View Controller-->
         <scene sceneID="HLj-I6-QWs">
             <objects>
-                <viewController id="DcT-7Y-Ruu" customClass="ShowViewController" customModule="RuPaulAppSecondTake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DcT-7Y-Ruu" customClass="ShowViewController" customModule="RuPaul_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mQ0-y4-pLR">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -460,8 +461,8 @@
                                                                     </constraint>
                                                                 </constraints>
                                                                 <prototypes>
-                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="queenCell" rowHeight="91" id="PLY-Ac-91k" customClass="QueenCell" customModule="RuPaulAppSecondTake" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="91"/>
+                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="queenCell" rowHeight="91" id="PLY-Ac-91k" customClass="QueenCell" customModule="RuPaul_Companion" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="50" width="428" height="91"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PLY-Ac-91k" id="cEs-gs-tcN">
                                                                             <rect key="frame" x="0.0" y="0.0" width="428" height="91"/>
@@ -579,7 +580,7 @@
         <!--Details View Controller-->
         <scene sceneID="IXx-ub-yCf">
             <objects>
-                <viewController id="Vzp-Wr-keZ" customClass="DetailsViewController" customModule="RuPaulAppSecondTake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vzp-Wr-keZ" customClass="DetailsViewController" customModule="RuPaul_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FbG-eL-ObA">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -727,7 +728,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Qg-ih-Onk">
-                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -767,7 +768,7 @@
                     <tabBarItem key="tabBarItem" title="Gallery" image="person.crop.artframe" catalog="system" selectedImage="person.crop.artframe" id="pMZ-WX-A0e"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q8x-Us-Bfs">
-                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -786,7 +787,7 @@
                     <tabBarItem key="tabBarItem" title="Encycl-Ru-Pedia" image="book" catalog="system" selectedImage="book" id="iyV-pK-zwv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xad-ll-fah">
-                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -807,7 +808,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OA1-QL-nlR">
-                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -826,15 +827,15 @@
         <image name="NewIcon" width="128" height="128"/>
         <image name="Profile" width="128" height="128"/>
         <image name="TootButton" width="128" height="128"/>
-        <image name="arrow.down" catalog="system" width="120" height="128"/>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
-        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="arrow.down" catalog="system" width="118" height="128"/>
+        <image name="arrow.left" catalog="system" width="128" height="95"/>
+        <image name="arrow.right" catalog="system" width="128" height="95"/>
         <image name="book" catalog="system" width="128" height="99"/>
-        <image name="camera" catalog="system" width="128" height="94"/>
-        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="camera" catalog="system" width="128" height="93"/>
+        <image name="house" catalog="system" width="128" height="104"/>
         <image name="person.crop.artframe" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
