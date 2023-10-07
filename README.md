@@ -1,8 +1,10 @@
+![Simulator Screen Shot - iPhone 13 - 2023-10-07 at 12 40 25](https://github.com/ajcoutinho/RuPaulCompanionApp/assets/91561033/18831b68-f59f-41e9-b20c-83834b9d5168)
 # RuPaulCompanionApp
 
 An App desinged for RuPaul's Drag Race fans, for use while watching the show. Available for Apple products.
 
 ## Features
+
 
 ### Encycl-Ru-Pedia
 
